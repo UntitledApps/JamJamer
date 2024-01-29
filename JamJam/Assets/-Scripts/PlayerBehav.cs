@@ -10,7 +10,7 @@ using Vector2 = UnityEngine.Vector2;
 public class PlayerMovement : MonoBehaviour
 {
     [SerializeField] private float moveSpeed, JumpPower, hookPower, mouseSens;
-    [SerializeField] private GameObject Cam;
+    [SerializeField] private GameObject Cam, Stone, StoneHolder, GrassHolder;
 
     private Rigidbody rb;
 
@@ -37,17 +37,22 @@ public class PlayerMovement : MonoBehaviour
         transform.Rotate(Vector3.up,mouseInput.x * mouseSens);
         
         camLookAngle += mouseInput.y * mouseSens;
-        math.clamp(camLookAngle, -89, 89);  /// ask teachers why this line is not working ?????
+        //math.clamp(camLookAngle, -89, 89);   ask teachers why this line is not working ?????!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
         
         Cam.transform.rotation = Quaternion.Euler(-camLookAngle, Cam.transform.rotation.eulerAngles.y, Cam.transform.rotation.eulerAngles.z);
  
         print(camLookAngle);
     }
-
     private void OnJump()
     {
         rb.AddForce(transform.up * JumpPower);
     }
+
+    private void OnFire()
+    {
+        Instantiate(Stone, StoneHolder.transform.position, StoneHolder.transform.rotation);
+    }
+    
 
     private void FixedUpdate()
     {
