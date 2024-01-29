@@ -32,7 +32,7 @@ public class PlayerMovement : MonoBehaviour
     {
         mouseInput = value.Get<Vector2>();
         
-        Cam.transform.Rotate(-mouseInput.y * mouseSens, mouseInput.x * mouseSens, 0);
+        Cam.transform.Rotate(Vector3.right, mouseInput.y * mouseSens);
         
         //maybe implement a way to rotate the player on its z axis ?  
     }
