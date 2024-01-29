@@ -182,7 +182,7 @@ BoxCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1425548077}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 984ebf0b65136c64e997174e48e255ed, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -387,16 +387,62 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2785330422977149473, guid: 4df3f0366ea1647489b6756a289ccd17,
+        type: 3}
+      propertyPath: JumpPower
+      value: 1000
+      objectReference: {fileID: 0}
+    - target: {fileID: 2785330422977149473, guid: 4df3f0366ea1647489b6756a289ccd17,
+        type: 3}
+      propertyPath: mouseSens
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2785330422977149473, guid: 4df3f0366ea1647489b6756a289ccd17,
+        type: 3}
+      propertyPath: moveSpeed
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 2785330422977149473, guid: 4df3f0366ea1647489b6756a289ccd17,
+        type: 3}
+      propertyPath: verticalLookLimit
+      value: 85
+      objectReference: {fileID: 0}
     - target: {fileID: 4008935384296836281, guid: 4df3f0366ea1647489b6756a289ccd17,
         type: 3}
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 4528932135114925128, guid: 4df3f0366ea1647489b6756a289ccd17,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4528932135114925128, guid: 4df3f0366ea1647489b6756a289ccd17,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4528932135114925128, guid: 4df3f0366ea1647489b6756a289ccd17,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4528932135114925128, guid: 4df3f0366ea1647489b6756a289ccd17,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4528932135114925128, guid: 4df3f0366ea1647489b6756a289ccd17,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8002977942745691845, guid: 4df3f0366ea1647489b6756a289ccd17,
         type: 3}
-      propertyPath: m_Radius
-      value: 0.41
-      objectReference: {fileID: 0}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 13400000, guid: ddfdeb5dd79713146b734aca40411b11,
+        type: 2}
     - target: {fileID: 9123965929237160775, guid: 4df3f0366ea1647489b6756a289ccd17,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -453,8 +499,8 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 4008935384296836281, guid: 4df3f0366ea1647489b6756a289ccd17,
         type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 5933786636125596225}
+      insertIndex: 2
+      addedObject: {fileID: 5933786636125596232}
   m_SourcePrefab: {fileID: 100100000, guid: 4df3f0366ea1647489b6756a289ccd17, type: 3}
 --- !u!1 &5933786636125596222 stripped
 GameObject:
@@ -462,18 +508,33 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 5933786636125596221}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &5933786636125596225
-MonoBehaviour:
+--- !u!54 &5933786636125596232
+Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5933786636125596222}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b26f05ca3ed3fe5499e859fc7726543e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 80
+  m_CollisionDetection: 0
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

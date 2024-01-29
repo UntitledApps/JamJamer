@@ -1,7 +1,5 @@
 using System.Collections;
 using System.Collections.Generic;
-using System.Numerics;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using Vector3 = UnityEngine.Vector3;
@@ -9,8 +7,8 @@ using Vector2 = UnityEngine.Vector2;
 
 public class PlayerMovement : MonoBehaviour
 {
-    [SerializeField] private float moveSpeed, hookPower, mouseSens; 
-    [SerializeField] private Gameobject Cam; 
+    [SerializeField] private float moveSpeed, JumpPower, hookPower, mouseSens; 
+    [SerializeField] private GameObject Cam; 
 
     private Rigidbody rb;
 
@@ -24,7 +22,7 @@ public class PlayerMovement : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
     }
 
-    private void OnMovement(InputValue value)
+    private void OnMove(InputValue value)
     {
         moveVec =  value.Get<Vector2>() * moveSpeed;
     }
@@ -32,16 +30,22 @@ public class PlayerMovement : MonoBehaviour
     {
         mouseInput = value.Get<Vector2>();
         
-        Cam.transform.Rotate(Vector3.right, mouseInput.y * mouseSens);
+        transform.Rotate(Vector3.up, mouseInput.x * mouseSens);
         
-        //maybe implement a way to rotate the player on its z axis ?  
+        Cam.transform.Rotate(Vector3.left, mouseInput.y * mouseSens);
+        // if (Cam.transform.eulerAngles.x > 85 && Cam.transform.eulerAngles.x < 100)
+        // {
+        //     Cam.transform.rotation = Cam.transform.eulerAngles.x;
+        // }
+        
+        print(Cam.transform.eulerAngles.x);
     }
     private void OnJump()
     {
-        rb.AddForce(transform.forward * dashPower);
+        rb.AddForce(transform.up * JumpPower);
     }
     private void FixedUpdate()
     {
-        rb.AddForce(transform.forward * moveVec.y + transform.right * moveVec.x);
+        rb.velocity = transform.forward * moveVec.y + transform.right * moveVec.x;
     }
 }
