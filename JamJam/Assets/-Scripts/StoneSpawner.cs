@@ -9,10 +9,14 @@ public class StoneSpawner : MonoBehaviour
     
     [FormerlySerializedAs("cricketPrefab")] [SerializeField] private GameObject stonePrefab;
     [SerializeField] private bool hasSpawned = false;
-    [SerializeField] private float spawnDelay = 0f;
+    [SerializeField] private float spawnDelay = 1.5f;
     [SerializeField] private int howManyToSpawn = 5;
     [SerializeField] private float spawnRadius = 5f;
     // Start is called before the first frame update
+    void Start()
+    {
+        
+    }
     
     void SpawnCricket()
     {
@@ -36,13 +40,6 @@ public class StoneSpawner : MonoBehaviour
             Invoke(nameof(SpawnCricket), spawnDelay);
         }
     }
-    
-    private void OnDrawGizmosSelected()
-    {
-        Gizmos.color = Color.yellow;
-        Gizmos.DrawWireSphere(transform.position, spawnRadius);
-    }
-
 
     private void OnTriggerEnter(Collider other)
     {
