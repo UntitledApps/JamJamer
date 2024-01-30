@@ -14,7 +14,7 @@ public class PlayerMovement : MonoBehaviour
 
     private Rigidbody rb;
 
-    private Vector3 moveVec;
+    private Vector3 moveVec, HookPos;
     private Vector2 mouseInput;
     private float camLookAngle;
 
@@ -50,20 +50,20 @@ public class PlayerMovement : MonoBehaviour
     {
         Instantiate(Stone, StoneHolder.transform.position, StoneHolder.transform.rotation);
     }
-<<<<<<< Updated upstream
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.gameObject.tag == "Player")
-=======
-
     private void OnHook()
-    { if (Collider.T == "*tag*")
->>>>>>> Stashed changes
-        {
-            Vector3 position = other.gameObject.transform.position;
-            Debug.Log("Player position: " + position);
-        }
+    {
+        
     }
+    
+    // private void Cam.OnTriggerEnter(Collider other)
+    // {
+    //     if (other.gameObject.tag == "Enemy")
+    //     {
+    //         HookPos = other.gameObject.transform.position;
+    //         
+    //         
+    //     }
+    // }
 
     private void FixedUpdate()
     {
