@@ -6,7 +6,7 @@ TagManager:
   tags:
   - Stone
   - Cricket
-  - HitSpace
+
   layers:
   - Default
   - TransparentFX
