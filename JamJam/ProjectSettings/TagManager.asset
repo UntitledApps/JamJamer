@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Stone
   - Cricket
+  - Ground
   layers:
   - Default
   - TransparentFX

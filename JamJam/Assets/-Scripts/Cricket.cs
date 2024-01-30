@@ -27,15 +27,7 @@ public class Cricket : MonoBehaviour
 
     }
 
-    private void OnMouseDown()
-    {
-            
-            if (isOnGround)
-            {
-                jumpInTheAir();
-            }   
-    }
-
+  
 
     void jumpInTheAir()
     {
@@ -52,6 +44,14 @@ public class Cricket : MonoBehaviour
                 Destroy(gameObject);
             }
         }
+        
+           if(other.gameObject.CompareTag("Stone"))
+                {
+                     if (isOnGround)
+                                {
+                                    jumpInTheAir();
+                                }   
+                }
         
         
         
