@@ -50,13 +50,13 @@ public class Cricket : MonoBehaviour
             }
         }
         
-           if(other.gameObject.CompareTag("Stone"))
-                {
-                     if (isOnGround)
-                                {
-                                    jumpInTheAir();
-                                }   
-                }
+        if(other.gameObject.CompareTag("Stone"))
+        {
+            if (isOnGround)
+            {
+                jumpInTheAir();
+            }   
+        }
         
         
         

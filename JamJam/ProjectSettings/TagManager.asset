@@ -8,6 +8,7 @@ TagManager:
   - Cricket
   - Ground
   - HitSpace
+  - StoneCollectible
   layers:
   - Default
   - TransparentFX
