@@ -54,10 +54,12 @@ public class PlayerMovement : MonoBehaviour
         Instantiate(Stone, StoneHolder.transform.position, StoneHolder.transform.rotation);
     }
 
-    private void OnHook()
+    private void OnTriggerEnter(Collider other)
     {
-        if (Collider.T == "*tag*")
+        if (other.gameObject.tag == "Player")
         {
+            Vector3 position = other.gameObject.transform.position;
+            Debug.Log("Player position: " + position);
         }
     }
 
