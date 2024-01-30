@@ -15,7 +15,7 @@ public class PlayerMovement : MonoBehaviour
 
     private Rigidbody rb;
 
-    private Vector3 moveVec, HookPos, origVelo;
+    private Vector3 moveVec, hookVec, origVelo;
     private Vector2 mouseInput;
     private float camLookAngle;
 
@@ -53,11 +53,17 @@ public class PlayerMovement : MonoBehaviour
     {
         if (HookHitSpacBehav.hookPos != Vector3.zero)
         {
-            rb.AddForce((HookHitSpacBehav.hookPos - transform.position).normalized * hookPower + Vector3.up * hookVertPush);
+            hookVec.x = HookHitSpacBehav.hookPos.x - transform.position.x * hookPower;
+            hookVec.z = HookHitSpacBehav.hookPos.z - transform.position.z * hookPower;
+            hookVec.y = hookVertPush;
+            
+            rb.AddForce(hookVec);
         }   
     }
     private void FixedUpdate()
     {
         rb.velocity += transform.forward * moveVec.y + transform.right * moveVec.x;
+        
+        // print(hookVec);
     }
 }
