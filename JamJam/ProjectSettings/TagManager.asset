@@ -6,17 +6,17 @@ TagManager:
   tags:
   - Stone
   - Cricket
-
+  - Ground
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - HitSpace
+  - 
   - Water
   - UI
-  - Low_UI
-  - Enemy
-  - Stone
+  - 
+  - 
+  - 
   - 
   - 
   - 
