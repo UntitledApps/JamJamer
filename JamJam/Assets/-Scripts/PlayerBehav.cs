@@ -9,7 +9,7 @@ using Vector2 = UnityEngine.Vector2;
 
 public class PlayerMovement : MonoBehaviour
 {
-    [SerializeField] private float moveSpeed, JumpPower, hookPower, mouseSens;
+    [SerializeField] private float mouseSens, moveSpeed, JumpPower, hookPower, hookVertPush;
     [SerializeField] private GameObject Cam, Stone, StoneHolder, GrassHolder;
     [SerializeField] private HookHitSpacBehav HookHitSpacBehav;
 
@@ -51,12 +51,11 @@ public class PlayerMovement : MonoBehaviour
     }
     private void OnHook()
     {
-        if (HookHitSpacBehav.HookPos != Vector3.zero)
+        if (HookHitSpacBehav.hookPos != Vector3.zero)
         {
-            rb.AddForce((HookHitSpacBehav.HookPos.normalized * hookPower) - transform.position);
+            rb.AddForce((HookHitSpacBehav.hookPos - transform.position).normalized * hookPower + Vector3.up * hookVertPush);
         }   
     }
-
     private void FixedUpdate()
     {
         rb.velocity += transform.forward * moveVec.y + transform.right * moveVec.x;

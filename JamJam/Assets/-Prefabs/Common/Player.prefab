@@ -81,10 +81,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b26f05ca3ed3fe5499e859fc7726543e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 1
-  JumpPower: 12
-  hookPower: 1000
   mouseSens: 0.3
+  moveSpeed: 1
+  JumpPower: 80
+  hookPower: 1000
+  hookVertPush: 30
   Cam: {fileID: 7925721465896613805}
   Stone: {fileID: 8502668361005643745, guid: 1739e4f52aa5ff64a9cd6270182a41ee, type: 3}
   StoneHolder: {fileID: 3840561102864218292}
@@ -523,7 +524,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e2c9ca15d0ccf64894bc6ec248106be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HookPos: {x: 0, y: 0, z: 0}
+  hookPos: {x: 0, y: 0, z: 0}
 --- !u!64 &2899422669897273401
 MeshCollider:
   m_ObjectHideFlags: 0

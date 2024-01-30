@@ -1,20 +1,22 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class HookHitSpacBehav : MonoBehaviour
 {
-    public Vector3 HookPos;
+    public Vector3 hookPos;
     
     private void OnTriggerStay(Collider other)
     {
         if (other.gameObject.tag == "Cricket")
         {
-            HookPos = other.gameObject.transform.position;
+            hookPos = other.gameObject.transform.position;
         }
         else
         {
-            HookPos = Vector3.zero;
+            hookPos = Vector3.zero;
         }
-    }    
+    }
 }
