@@ -34,15 +34,16 @@ public class PlayerMovement : MonoBehaviour
     {
         mouseInput = value.Get<Vector2>();
 
-        transform.Rotate(Vector3.up,mouseInput.x * mouseSens);
-        
-        camLookAngle += mouseInput.y * mouseSens;
-        //math.clamp(camLookAngle, -89, 89);   ask teachers why this line is not working ?????!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-        
-        Cam.transform.rotation = Quaternion.Euler(-camLookAngle, Cam.transform.rotation.eulerAngles.y, Cam.transform.rotation.eulerAngles.z);
- 
+        transform.Rotate(Vector3.up, mouseInput.x * mouseSens);
+
+        camLookAngle = Mathf.Clamp(camLookAngle + mouseInput.y * mouseSens, -89, 89);
+
+        Cam.transform.rotation = Quaternion.Euler(-camLookAngle,
+            Cam.transform.rotation.eulerAngles.y, Cam.transform.rotation.eulerAngles.z);
+
         print(camLookAngle);
     }
+
     private void OnJump()
     {
         rb.AddForce(transform.up * JumpPower);
@@ -52,7 +53,13 @@ public class PlayerMovement : MonoBehaviour
     {
         Instantiate(Stone, StoneHolder.transform.position, StoneHolder.transform.rotation);
     }
-    
+
+    private void OnHook()
+    {
+        if (Collider.T == "*tag*")
+        {
+        }
+    }
 
     private void FixedUpdate()
     {
