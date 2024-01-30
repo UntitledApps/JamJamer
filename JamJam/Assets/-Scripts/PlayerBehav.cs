@@ -40,8 +40,6 @@ public class PlayerMovement : MonoBehaviour
 
         Cam.transform.rotation = Quaternion.Euler(-camLookAngle,
             Cam.transform.rotation.eulerAngles.y, Cam.transform.rotation.eulerAngles.z);
-
-        print(camLookAngle);
     }
     private void OnJump()
     {

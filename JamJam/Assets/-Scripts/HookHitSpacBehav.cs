@@ -6,9 +6,9 @@ public class HookHitSpacBehav : MonoBehaviour
 {
     public Vector3 HookPos;
     
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerStay(Collider other)
     {
-        if (other.gameObject.tag == "Enemy")
+        if (other.gameObject.tag == "Cricket")
         {
             HookPos = other.gameObject.transform.position;
         }
