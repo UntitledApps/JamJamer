@@ -12,7 +12,8 @@ public class HookHitSpacBehav : MonoBehaviour
     {
         if (other.gameObject.tag == "Cricket")
         {
-            hookPos = other.gameObject.transform.position;
+            hookPos.x = other.gameObject.transform.position.x ;
+            hookPos.z = other.gameObject.transform.position.z ;
         }
         else
         {

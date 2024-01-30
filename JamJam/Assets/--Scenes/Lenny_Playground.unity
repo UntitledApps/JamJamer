@@ -732,10 +732,30 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1125702610360218036, guid: 4df3f0366ea1647489b6756a289ccd17,
+        type: 3}
+      propertyPath: m_Mass
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2785330422977149473, guid: 4df3f0366ea1647489b6756a289ccd17,
+        type: 3}
+      propertyPath: JumpPower
+      value: 700
+      objectReference: {fileID: 0}
+    - target: {fileID: 2785330422977149473, guid: 4df3f0366ea1647489b6756a289ccd17,
+        type: 3}
+      propertyPath: hookPower
+      value: 3000
+      objectReference: {fileID: 0}
+    - target: {fileID: 2785330422977149473, guid: 4df3f0366ea1647489b6756a289ccd17,
+        type: 3}
+      propertyPath: moveSpeed
+      value: 0.4
+      objectReference: {fileID: 0}
     - target: {fileID: 2785330422977149473, guid: 4df3f0366ea1647489b6756a289ccd17,
         type: 3}
       propertyPath: hookVertPush
-      value: 70
+      value: 7000
       objectReference: {fileID: 0}
     - target: {fileID: 3190733820289366308, guid: 4df3f0366ea1647489b6756a289ccd17,
         type: 3}
