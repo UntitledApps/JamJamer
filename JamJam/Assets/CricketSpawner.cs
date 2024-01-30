@@ -9,6 +9,7 @@ public class CricketSpawner : MonoBehaviour
     [SerializeField] private GameObject cricketPrefab;
     [SerializeField] private bool hasSpawned = false;
     [SerializeField] private float spawnDelay = 1.5f;
+    [SerializeField] private float cricketSpeed = 1.5f;
     [SerializeField] private int howManyToSpawn = 5;
     // Start is called before the first frame update
     void Start()
@@ -18,7 +19,9 @@ public class CricketSpawner : MonoBehaviour
     
     void SpawnCricket()
     {
-        Instantiate(cricketPrefab, transform.position, Quaternion.identity);
+      GameObject spawnedCricket =  Instantiate(cricketPrefab, transform.position, Quaternion.identity);
+      spawnedCricket.GetComponent<Cricket>().SetSpeed(cricketSpeed);
+        
     }
 
     Vector3 randomPosition()
@@ -34,18 +37,19 @@ public class CricketSpawner : MonoBehaviour
         }
     }
 
-    private void OnCollisionEnter(Collision other)
+    private void OnTriggerEnter(Collider other)
     {
-       if(other.gameObject.CompareTag("Player"))
-       {
-           if(!hasSpawned)
-           {
+        if(other.gameObject.CompareTag("Player"))
+        {
+            if(!hasSpawned)
+            {
 
-               Spawn();
-               hasSpawned = true;
+                Spawn();
+                hasSpawned = true;
 
 
-           }
-       }
+            }
+        }
     }
+    
 }

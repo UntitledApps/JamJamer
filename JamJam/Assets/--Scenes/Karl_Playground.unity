@@ -247,21 +247,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1090529196}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &380368276
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 380368269}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 79ed5ebaddd21d2469c6036b7f606946, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  jumpForce: 10
-  runSpeed: 0.1
-  player: {fileID: 487752041}
 --- !u!1001 &487752032
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -356,6 +341,7 @@ GameObject:
   m_Component:
   - component: {fileID: 511102538}
   - component: {fileID: 511102537}
+  - component: {fileID: 511102539}
   m_Layer: 0
   m_Name: Spawner
   m_TagString: Untagged
@@ -378,12 +364,12 @@ SphereCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Radius: 4.695631
+  m_Center: {x: 0, y: 4.195631, z: 0}
 --- !u!4 &511102538
 Transform:
   m_ObjectHideFlags: 0
@@ -393,12 +379,29 @@ Transform:
   m_GameObject: {fileID: 511102536}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: -4.15, z: 2.36}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &511102539
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 511102536}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59a11c05d52226d4e95be37f2171e315, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cricketPrefab: {fileID: 380368269}
+  hasSpawned: 0
+  spawnDelay: 1.5
+  cricketSpeed: 0.01
+  howManyToSpawn: 5
 --- !u!1 &808251480
 GameObject:
   m_ObjectHideFlags: 0
@@ -512,6 +515,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1868429047809588888, guid: 37650872e13762344b02bd1c9a4ed79d,
+        type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 487752041}
     - target: {fileID: 2334914914124649319, guid: 37650872e13762344b02bd1c9a4ed79d,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -567,15 +575,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Cricket
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 1210535108022990517, guid: 37650872e13762344b02bd1c9a4ed79d, type: 3}
+    m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 2553294102102301846, guid: 37650872e13762344b02bd1c9a4ed79d,
-        type: 3}
-      insertIndex: 4
-      addedObject: {fileID: 380368276}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 37650872e13762344b02bd1c9a4ed79d, type: 3}
 --- !u!1 &1409821406
 GameObject:

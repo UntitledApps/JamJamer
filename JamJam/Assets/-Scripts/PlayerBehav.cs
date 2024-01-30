@@ -50,9 +50,15 @@ public class PlayerMovement : MonoBehaviour
     {
         Instantiate(Stone, StoneHolder.transform.position, StoneHolder.transform.rotation);
     }
+<<<<<<< Updated upstream
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag == "Player")
+=======
+
+    private void OnHook()
+    { if (Collider.T == "*tag*")
+>>>>>>> Stashed changes
         {
             Vector3 position = other.gameObject.transform.position;
             Debug.Log("Player position: " + position);

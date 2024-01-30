@@ -19,6 +19,11 @@ public class Cricket : MonoBehaviour
     {
         rb = GetComponent<Rigidbody>();
     }
+    
+    public void SetSpeed(float speed)
+    {
+        runSpeed = speed;
+    }
 
     // Update is called once per frame
     void FixedUpdate()
