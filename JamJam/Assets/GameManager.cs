@@ -5,7 +5,7 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     [SerializeField] private int maxIslands;
-    private int maxIslands;
+    private List<GameObject> maxIslands = new List<GameObject>;
     
     
 

@@ -9,6 +9,7 @@ TagManager:
   - Ground
   - HitSpace
   - StoneCollectible
+  - IslandHeight
   layers:
   - Default
   - TransparentFX
