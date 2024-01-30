@@ -558,6 +558,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64058d9a071836343b1a1fcab4879861, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxIslands: 0
 --- !u!1001 &5933786636125596221
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -748,6 +749,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Island
+      objectReference: {fileID: 0}
+    - target: {fileID: 7151499277139243693, guid: de94b3c680871a34a8b07abf2c930654,
+        type: 3}
+      propertyPath: m_TagString
+      value: IslandHeight
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
