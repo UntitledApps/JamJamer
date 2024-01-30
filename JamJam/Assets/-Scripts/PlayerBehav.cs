@@ -29,7 +29,6 @@ public class PlayerMovement : MonoBehaviour
     {
         moveVec = value.Get<Vector2>() * moveSpeed;
     }
-
     private void OnLook(InputValue value)
     {
         mouseInput = value.Get<Vector2>();
@@ -43,17 +42,14 @@ public class PlayerMovement : MonoBehaviour
 
         print(camLookAngle);
     }
-
     private void OnJump()
     {
         rb.AddForce(transform.up * JumpPower);
     }
-
     private void OnFire()
     {
         Instantiate(Stone, StoneHolder.transform.position, StoneHolder.transform.rotation);
     }
-
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag == "Player")
