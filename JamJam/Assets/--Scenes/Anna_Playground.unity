@@ -323,6 +323,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b26f05ca3ed3fe5499e859fc7726543e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  mouseSens: 0
+  moveSpeed: 0
+  JumpPower: 0
+  hookPower: 0
+  hookVertPush: 0
+  Cam: {fileID: 0}
+  Stone: {fileID: 0}
+  StoneHolder: {fileID: 0}
+  GrassHolder: {fileID: 0}
+  HookHitSpacBehav: {fileID: 0}
 --- !u!1 &1562149188
 GameObject:
   m_ObjectHideFlags: 0
