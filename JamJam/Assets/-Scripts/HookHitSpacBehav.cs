@@ -4,15 +4,17 @@ using UnityEngine;
 
 public class HookHitSpacBehav : MonoBehaviour
 {
-
-    void Start()
+    public Vector3 HookPos;
+    
+    private void OnTriggerEnter(Collider other)
     {
-        
-    }
-
-
-    void Update()
-    {
-        
-    }
+        if (other.gameObject.tag == "Enemy")
+        {
+            HookPos = other.gameObject.transform.position;
+        }
+        else
+        {
+            HookPos = Vector3.zero;
+        }
+    }    
 }

@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 7049986554638995211}
   - component: {fileID: 582494071085297106}
   - component: {fileID: 8572070048457370621}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Stone
   m_TagString: Stone
   m_Icon: {fileID: 0}
@@ -50,6 +50,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stoneSpeed: 3000
   HopUp: 30
+  lifeTime: 10
   rb: {fileID: 8572070048457370621}
 --- !u!33 &5587983789895605392
 MeshFilter:

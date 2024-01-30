@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class StoneBehav : MonoBehaviour
 {
-    [SerializeField] private float stoneSpeed, HopUp;
+    [SerializeField] private float stoneSpeed, HopUp, lifeTime;
     [SerializeField] private Rigidbody rb;
 
     private Vector3 HopUptrajectory;
@@ -20,7 +20,7 @@ public class StoneBehav : MonoBehaviour
 
     IEnumerator DestroyTimer()
     {
-        yield return new WaitForSeconds(5f);
+        yield return new WaitForSeconds(lifeTime);
         Destroy(this.gameObject);
     } 
 

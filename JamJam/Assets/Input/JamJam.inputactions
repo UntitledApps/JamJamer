@@ -42,7 +42,7 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "OnHook",
+                    "name": "Hook",
                     "type": "Button",
                     "id": "5507e62c-468e-4a44-9169-1f4712316816",
                     "expectedControlType": "Button",
@@ -147,7 +147,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "Keyboard&Mouse",
-                    "action": "OnHook",
+                    "action": "Hook",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

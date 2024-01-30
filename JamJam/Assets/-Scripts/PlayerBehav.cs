@@ -11,10 +11,11 @@ public class PlayerMovement : MonoBehaviour
 {
     [SerializeField] private float moveSpeed, JumpPower, hookPower, mouseSens;
     [SerializeField] private GameObject Cam, Stone, StoneHolder, GrassHolder;
+    [SerializeField] private HookHitSpacBehav HookHitSpacBehav;
 
     private Rigidbody rb;
 
-    private Vector3 moveVec, HookPos;
+    private Vector3 moveVec, HookPos, origVelo;
     private Vector2 mouseInput;
     private float camLookAngle;
 
@@ -52,21 +53,14 @@ public class PlayerMovement : MonoBehaviour
     }
     private void OnHook()
     {
-        
+        if (HookHitSpacBehav.HookPos != Vector3.zero)
+        {
+            rb.AddForce((HookHitSpacBehav.HookPos.normalized * hookPower) - transform.position);
+        }   
     }
-    
-    // private void Cam.OnTriggerEnter(Collider other)
-    // {
-    //     if (other.gameObject.tag == "Enemy")
-    //     {
-    //         HookPos = other.gameObject.transform.position;
-    //         
-    //         
-    //     }
-    // }
 
     private void FixedUpdate()
     {
-        rb.velocity = transform.forward * moveVec.y + transform.right * moveVec.x;
+        rb.velocity += transform.forward * moveVec.y + transform.right * moveVec.x;
     }
 }
