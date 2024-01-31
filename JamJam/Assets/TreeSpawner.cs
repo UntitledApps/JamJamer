@@ -1,13 +1,14 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Serialization;
+using Random = UnityEngine.Random;
 
-public class StoneSpawner : MonoBehaviour
+public class TreeSpawner : MonoBehaviour
 {
-    // Start is called before the first frame update
-    
-    [FormerlySerializedAs("cricketPrefab")] [SerializeField] private GameObject stonePrefab;
+      
+    [FormerlySerializedAs("stonePrefab")] [FormerlySerializedAs("cricketPrefab")] [SerializeField] private GameObject treePrefab;
     [SerializeField] private bool hasSpawned = false;
     [SerializeField] private float spawnDelay = 1.5f;
     [SerializeField] private int howManyToSpawn = 5;
@@ -19,7 +20,6 @@ public class StoneSpawner : MonoBehaviour
         Gizmos.DrawWireSphere(transform.position, spawnRadius);
     }
 
-    
     void SpawnCricket()
     {
         Vector2 randomPos = Random.insideUnitCircle * spawnRadius;
@@ -28,8 +28,8 @@ public class StoneSpawner : MonoBehaviour
         Vector3 spawnPosition = new Vector3(randomPos.x, 0f, randomPos.y) + transform.position;
 
         // Instantiate the item prefab at the generated position
-        Instantiate(stonePrefab, spawnPosition, Quaternion.identity);
-        GameObject spawnedCricket =  Instantiate(stonePrefab, transform.position, Quaternion.identity);
+        Instantiate(treePrefab, spawnPosition, Quaternion.identity);
+        GameObject spawnedCricket =  Instantiate(treePrefab, transform.position, Quaternion.identity);
     
         
     }
