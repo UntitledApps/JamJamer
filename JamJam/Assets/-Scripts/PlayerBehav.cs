@@ -16,7 +16,7 @@ public class PlayerMovement : MonoBehaviour
     private Vector3 moveVec, hookVec, origVelo;
     private Vector2 mouseInput;
     private float camLookAngle;
-    private bool grounded, hasStone;
+    private bool grounded, hasStone, isHittingStone;
     private Rigidbody rb;
 
     private void Awake()
@@ -60,8 +60,14 @@ public class PlayerMovement : MonoBehaviour
 
     private void OnFire()
     {
-        
-        Instantiate(Stone, StoneHolder.transform.position, StoneHolder.transform.rotation);
+        if (hasStone)
+        {
+            Instantiate(Stone, StoneHolder.transform.position, StoneHolder.transform.rotation);
+        }
+        else if (isHittingStone)
+        {
+            hasStone = true;
+        }
     }
 
     private void OnHook()

@@ -10,14 +10,15 @@ TagManager:
   - HitSpace
   - StoneCollectible
   - IslandHeight
+  - Pickupable
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Pickupable
   - Water
   - UI
-  - Stone
+  - ShootingStone
   - Player
   - HookHitSpace
   - Enemy

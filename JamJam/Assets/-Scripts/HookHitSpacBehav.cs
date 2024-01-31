@@ -32,7 +32,6 @@ public class HookHitSpacBehav : MonoBehaviour
         if (other.gameObject.tag == "Cricket")
         {
             hookPos = other.gameObject.transform.position;
-            
             print(hookPos);
         }
     }
@@ -40,6 +39,10 @@ public class HookHitSpacBehav : MonoBehaviour
     private void OnCollisionExit(Collision other)
     {
         if (other.gameObject.tag == "Cricket")
+        {
+            hookPos = Vector3.zero;
+        }
+        else if (other.gameObject.tag == "Pickupable")
         {
             hookPos = Vector3.zero;
         }
