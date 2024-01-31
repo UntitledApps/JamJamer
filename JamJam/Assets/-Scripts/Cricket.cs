@@ -28,7 +28,14 @@ public class Cricket : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        transform.position = Vector3.MoveTowards(transform.position, player.position, runSpeed);
+        transform.position = Vector3.MoveTowards(transform.position, player.position, runSpeed * Time.fixedDeltaTime);
+        Vector3 directionToPlayer = player.position - transform.position;
+
+        // Calculate the rotation to look at the player
+        Quaternion rotation = Quaternion.LookRotation(directionToPlayer, Vector3.up);
+
+        // Apply the rotation to the object
+        transform.rotation = rotation;
 
     }
 
