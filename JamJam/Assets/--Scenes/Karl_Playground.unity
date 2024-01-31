@@ -5157,9 +5157,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cricketPrefab: {fileID: 1502460574}
   hasSpawned: 0
-  spawnDelay: 4
+  spawnDelay: 0
   cricketSpeed: 3
+  vertOffset: 0
   howManyToSpawn: 2
+  spawnRadius: 8.72
 --- !u!114 &404943453
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5176,7 +5178,7 @@ MonoBehaviour:
     type: 3}
   hasSpawned: 0
   spawnDelay: 0
-  howManyToSpawn: 2
+  howManyToSpawn: 1
   spawnRadius: 10.6
 --- !u!1001 &487752032
 PrefabInstance:

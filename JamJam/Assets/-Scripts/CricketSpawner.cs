@@ -2,39 +2,46 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class CricketSpawner : MonoBehaviour
 {
     
     [SerializeField] private GameObject cricketPrefab;
     [SerializeField] private bool hasSpawned = false;
-    [SerializeField] private float spawnDelay = 1.5f;
+    
     [SerializeField] private float cricketSpeed = 1.5f;
     [SerializeField] private float vertOffset;
     [SerializeField] private int howManyToSpawn = 5;
-    // Start is called before the first frame updates
-    void Start()
+    [SerializeField] private float spawnRadius = 5f;
+ 
+    private void OnDrawGizmos()
     {
-        
+        Gizmos.color = Color.green;
+        Gizmos.DrawWireSphere(transform.position, spawnRadius);
     }
+
     
     void SpawnCricket()
     {
-      GameObject spawnedCricket =  Instantiate(cricketPrefab, transform.position, Quaternion.identity);
+        
+        Vector2 randomPos = Random.insideUnitCircle * spawnRadius;
+            
+        // Convert 2D position to 3D by adding a constant Y value
+        Vector3 spawnPosition = new Vector3(randomPos.x, 0f, randomPos.y) + transform.position;
+
+      GameObject spawnedCricket =  Instantiate(cricketPrefab, spawnPosition, Quaternion.identity);
       spawnedCricket.GetComponent<Cricket>().SetSpeed(cricketSpeed);
         
     }
 
-    Vector3 randomPosition()
-    {
-         return transform.position + new Vector3(UnityEngine.Random.Range(-5, 5), transform.position.y + vertOffset, UnityEngine.Random.Range(-5, 5));
-    }
+  
 
     void Spawn()
     {
         for(int i = 0; i < howManyToSpawn; i++)
         {
-            Invoke(nameof(SpawnCricket), spawnDelay);
+            SpawnCricket();
         }
     }
 
@@ -44,11 +51,8 @@ public class CricketSpawner : MonoBehaviour
         {
             if(!hasSpawned)
             {
-
                 Spawn();
                 hasSpawned = true;
-
-
             }
         }
     }
