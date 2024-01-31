@@ -13,7 +13,8 @@ public class IslandBehav : MonoBehaviour
     [SerializeField] private float destroyTimer;
     [SerializeField] private GameObject newIsland;
     private static GameObject newestIsland;
-    public bool isNewestIsland, exitHappened;
+    public bool isNewestIsland;
+    private bool exitDidntHappened = true;
 
     private Vector3 placementVec;
     private void FixedUpdate()
@@ -26,12 +27,14 @@ public class IslandBehav : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.gameObject.CompareTag("Player") && !exitHappened)
+        if (other.gameObject.CompareTag("Player") && exitDidntHappened)
         {
-            exitHappened = false;
+            print("island placed"); 
+            exitDidntHappened = false;
             
             newestIsland.GetComponent<IslandBehav>().isNewestIsland = true;
             StartCoroutine(DestroyTimer());
+
         }
     }
     private void clone()
@@ -48,25 +51,21 @@ public class IslandBehav : MonoBehaviour
             case 0:
                 placementVec.x = 20f;
                 placementVec.z = Random.Range(-20, 20);
-                print("1");
                 break;
 
             case 1:
                 placementVec.x = -20f;
                 placementVec.z = Random.Range(-20, 20);
-                print("2");
                 break;
 
             case 2:
                 placementVec.x = Random.Range(-20, 20);
                 placementVec.z = 20f;
-                print("3");
                 break;
             
             case 3:
                 placementVec.x = Random.Range(-20, 20);
                 placementVec.z = -20f;
-                print("4");
                 break;
             
             default:
@@ -76,12 +75,12 @@ public class IslandBehav : MonoBehaviour
 
         placementVec.y = Random.Range(15, 19);
 
-        print(placementVec);
         return placementVec;
     }
     IEnumerator DestroyTimer()
     {
+        print("now");
         yield return new WaitForSeconds(destroyTimer);
-        Destroy(this);
+        Destroy(this.gameObject);
     }
 }

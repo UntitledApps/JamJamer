@@ -10,8 +10,9 @@ public class CricketSpawner : MonoBehaviour
     [SerializeField] private bool hasSpawned = false;
     [SerializeField] private float spawnDelay = 1.5f;
     [SerializeField] private float cricketSpeed = 1.5f;
+    [SerializeField] private float vertOffset;
     [SerializeField] private int howManyToSpawn = 5;
-    // Start is called before the first frame update
+    // Start is called before the first frame updates
     void Start()
     {
         
@@ -26,7 +27,7 @@ public class CricketSpawner : MonoBehaviour
 
     Vector3 randomPosition()
     {
-         return transform.position + new Vector3(UnityEngine.Random.Range(-5, 5), transform.position.y + 1, UnityEngine.Random.Range(-5, 5));
+         return transform.position + new Vector3(UnityEngine.Random.Range(-5, 5), transform.position.y + vertOffset, UnityEngine.Random.Range(-5, 5));
     }
 
     void Spawn()

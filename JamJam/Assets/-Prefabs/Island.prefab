@@ -221,6 +221,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5483809201760749929}
   - component: {fileID: 3700236535055141756}
+  - component: {fileID: 8221911506062716181}
   - component: {fileID: 326373149803595009}
   m_Layer: 0
   m_Name: Island
@@ -261,6 +262,25 @@ MonoBehaviour:
   destroyTimer: 5
   newIsland: {fileID: 7151499277139243693}
   isNewestIsland: 0
+--- !u!114 &8221911506062716181
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7151499277139243693}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59a11c05d52226d4e95be37f2171e315, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cricketPrefab: {fileID: 1612560552761736216, guid: cdba1489619b09d438269024a0eda4e8,
+    type: 3}
+  hasSpawned: 0
+  spawnDelay: 1.5
+  cricketSpeed: 1.5
+  vertOffset: 0
+  howManyToSpawn: 5
 --- !u!65 &326373149803595009
 BoxCollider:
   m_ObjectHideFlags: 0
