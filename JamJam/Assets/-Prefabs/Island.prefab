@@ -13,12 +13,12 @@ GameObject:
   - component: {fileID: 7258394880919593029}
   - component: {fileID: 7663628880980184708}
   m_Layer: 9
-  m_Name: Sphere (2)
+  m_Name: TestCricket
   m_TagString: Cricket
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2920986695843438610
 Transform:
   m_ObjectHideFlags: 0
@@ -196,7 +196,7 @@ MeshCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1583791613181099331}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 984ebf0b65136c64e997174e48e255ed, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -259,7 +259,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cc8b1ba9595d44d46916cc16c819d6ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  destroyTimer: 5
+  destroyTimer: 8
   newIsland: {fileID: 7151499277139243693}
   isNewestIsland: 0
 --- !u!114 &8221911506062716181
@@ -269,17 +269,17 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7151499277139243693}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 59a11c05d52226d4e95be37f2171e315, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cricketPrefab: {fileID: 1612560552761736216, guid: cdba1489619b09d438269024a0eda4e8,
+  cricketPrefab: {fileID: 521047518122900004, guid: cdba1489619b09d438269024a0eda4e8,
     type: 3}
   hasSpawned: 0
   spawnDelay: 1.5
   cricketSpeed: 1.5
-  vertOffset: 0
+  vertOffset: 2
   howManyToSpawn: 5
 --- !u!65 &326373149803595009
 BoxCollider:
