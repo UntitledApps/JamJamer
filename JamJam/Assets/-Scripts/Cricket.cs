@@ -11,13 +11,18 @@ public class Cricket : MonoBehaviour
     
     [SerializeField] private float jumpForce = 10f;
     [SerializeField] private float runSpeed = 4f;
-    [SerializeField] private Transform player;
+    private Transform player;
+    
+   
     
     private Rigidbody rb;
     // Start is called before the first frame update
     void Start()
+    
     {
         rb = GetComponent<Rigidbody>();
+        player = GameObject.FindGameObjectWithTag("Player").transform;
+       
     }
     
     public void SetSpeed(float speed)
@@ -28,14 +33,9 @@ public class Cricket : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
+       
         transform.position = Vector3.MoveTowards(transform.position, player.position, runSpeed * Time.fixedDeltaTime);
-        Vector3 directionToPlayer = player.position - transform.position;
-
-        // Calculate the rotation to look at the player
-        Quaternion rotation = Quaternion.LookRotation(directionToPlayer, Vector3.up);
-
-        // Apply the rotation to the object
-        transform.rotation = rotation;
+        transform.right = player.position - transform.position;
 
     }
 

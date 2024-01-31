@@ -106,7 +106,7 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: f82bc109caf9e2c4eafe553736816e18,
         type: 3}
       propertyPath: m_Name
-      value: Cricket1
+      value: Cricket
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: f82bc109caf9e2c4eafe553736816e18,
         type: 3}
@@ -185,7 +185,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   jumpForce: 30
   runSpeed: 3
-  player: {fileID: 9123965929237160775, guid: 4df3f0366ea1647489b6756a289ccd17, type: 3}
 --- !u!54 &7001074726668243062
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -232,5 +231,5 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1073.364, y: 810.42535, z: 581.5761}
-  m_Center: {x: -15.3722, y: 10.192804, z: -6.732287}
+  m_Size: {x: 871.3805, y: 227.01135, z: 522.4061}
+  m_Center: {x: -116.3644, y: -79.30849, z: -36.31736}

@@ -26,7 +26,7 @@ public class CricketSpawner : MonoBehaviour
 
     Vector3 randomPosition()
     {
-         return transform.position + new Vector3(UnityEngine.Random.Range(-5, 5), transform.position.y + 5, UnityEngine.Random.Range(-5, 5));
+         return transform.position + new Vector3(UnityEngine.Random.Range(-5, 5), transform.position.y + 1, UnityEngine.Random.Range(-5, 5));
     }
 
     void Spawn()

@@ -263,7 +263,7 @@ MonoBehaviour:
     type: 3}
   hasSpawned: 0
   spawnDelay: 0
-  cricketSpeed: 1
+  cricketSpeed: 3
   howManyToSpawn: 1
 --- !u!135 &1857399717
 SphereCollider:
