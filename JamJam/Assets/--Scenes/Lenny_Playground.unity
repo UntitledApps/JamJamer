@@ -123,6 +123,29 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &41301104 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7151499277139243693, guid: de94b3c680871a34a8b07abf2c930654,
+    type: 3}
+  m_PrefabInstance: {fileID: 6222412998619420824}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &41301109
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 41301104}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 48ea855e8d496f54fb1f9cb271115b76, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stonePrefab: {fileID: 1438215994702311756, guid: 03622cdcaefe4914fb13ac217ab9878c,
+    type: 3}
+  hasSpawned: 0
+  howManyToSpawn: 7
+  spawnRadius: 8.18
 --- !u!1 &1275728743
 GameObject:
   m_ObjectHideFlags: 0
@@ -409,10 +432,19 @@ PrefabInstance:
       propertyPath: m_Name
       value: Island
       objectReference: {fileID: 0}
+    - target: {fileID: 8221911506062716181, guid: de94b3c680871a34a8b07abf2c930654,
+        type: 3}
+      propertyPath: spawnRadius
+      value: 8.49
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 7151499277139243693, guid: de94b3c680871a34a8b07abf2c930654,
+        type: 3}
+      insertIndex: 3
+      addedObject: {fileID: 41301109}
   m_SourcePrefab: {fileID: 100100000, guid: de94b3c680871a34a8b07abf2c930654, type: 3}
 --- !u!1001 &7953240851989970258
 PrefabInstance:

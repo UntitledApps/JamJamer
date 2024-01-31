@@ -24,7 +24,6 @@ public class CricketSpawner : MonoBehaviour
     
     void SpawnCricket()
     {
-        
         Vector2 randomPos = Random.insideUnitCircle * spawnRadius;
             
         // Convert 2D position to 3D by adding a constant Y value

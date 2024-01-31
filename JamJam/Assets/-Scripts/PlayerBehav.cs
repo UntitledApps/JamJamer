@@ -16,7 +16,7 @@ public class PlayerMovement : MonoBehaviour
     private Vector3 moveVec, hookVec, origVelo;
     private Vector2 mouseInput;
     private float camLookAngle;
-    private bool grounded;
+    private bool grounded, hasStone;
     private Rigidbody rb;
 
     private void Awake()
@@ -60,6 +60,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void OnFire()
     {
+        
         Instantiate(Stone, StoneHolder.transform.position, StoneHolder.transform.rotation);
     }
 

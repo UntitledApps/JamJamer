@@ -9,7 +9,6 @@ public class StoneSpawner : MonoBehaviour
     
     [FormerlySerializedAs("cricketPrefab")] [SerializeField] private GameObject stonePrefab;
     [SerializeField] private bool hasSpawned = false;
-    [SerializeField] private float spawnDelay = 1.5f;
     [SerializeField] private int howManyToSpawn = 5;
     [SerializeField] private float spawnRadius = 5f;
     // Start is called before the first frame update
@@ -37,10 +36,7 @@ public class StoneSpawner : MonoBehaviour
  
     void Spawn()
     {
-        for(int i = 0; i < howManyToSpawn; i++)
-        {
-            Invoke(nameof(SpawnCricket), spawnDelay);
-        }
+        SpawnCricket();
     }
 
     private void OnTriggerEnter(Collider other)
@@ -49,11 +45,8 @@ public class StoneSpawner : MonoBehaviour
         {
             if(!hasSpawned)
             {
-
                 Spawn();
                 hasSpawned = true;
-
-
             }
         }
     }
