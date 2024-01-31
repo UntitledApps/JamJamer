@@ -8,20 +8,11 @@ using UnityEngine.Serialization;
 
 public class HookHitSpacBehav : MonoBehaviour
 {
-    public Vector3 hookPos;
-    // private void OnTriggerEnter(Collision other)
-    // {
-    //     print("asojdf");
-    //     if (other.gameObject.tag == "Cricket")
-    //     {
-    //         hookPos = other.gameObject.transform.position;
-    //     }
-    // }
+    [NonSerialized] public Vector3 hookPos;
 
     private void OnTriggerEnter(Collider other)
     {
-        print("asojdf");
-        if (other.gameObject.tag == "Cricket")
+        if (other.gameObject.CompareTag("Cricket"))
         {
             hookPos = other.gameObject.transform.position;
         }
@@ -29,20 +20,15 @@ public class HookHitSpacBehav : MonoBehaviour
 
     private void OnCollisionStay(Collision other)
     {
-        if (other.gameObject.tag == "Cricket")
+        if (other.gameObject.CompareTag("Cricket"))
         {
             hookPos = other.gameObject.transform.position;
-            print(hookPos);
         }
     }
     
-    private void OnCollisionExit(Collision other)
+    private void OnTriggerExit(Collider other)
     {
-        if (other.gameObject.tag == "Cricket")
-        {
-            hookPos = Vector3.zero;
-        }
-        else if (other.gameObject.tag == "Pickupable")
+        if (other.gameObject.CompareTag("Cricket"))
         {
             hookPos = Vector3.zero;
         }

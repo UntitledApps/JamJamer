@@ -18,7 +18,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &2920986695843438610
 Transform:
   m_ObjectHideFlags: 0
@@ -222,6 +222,8 @@ GameObject:
   - component: {fileID: 5483809201760749929}
   - component: {fileID: 3700236535055141756}
   - component: {fileID: 8221911506062716181}
+  - component: {fileID: 1878049465713571598}
+  - component: {fileID: 6483792124506099814}
   - component: {fileID: 326373149803595009}
   m_Layer: 0
   m_Name: Island
@@ -259,8 +261,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cc8b1ba9595d44d46916cc16c819d6ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  destroyTimer: 8
+  distanceTillDestroy: 100
   newIsland: {fileID: 7151499277139243693}
+  player: {fileID: 0}
   isNewestIsland: 0
 --- !u!114 &8221911506062716181
 MonoBehaviour:
@@ -277,10 +280,44 @@ MonoBehaviour:
   cricketPrefab: {fileID: 521047518122900004, guid: cdba1489619b09d438269024a0eda4e8,
     type: 3}
   hasSpawned: 0
-  spawnDelay: 1.5
   cricketSpeed: 1.5
   vertOffset: 2
-  howManyToSpawn: 5
+  howManyToSpawn: 3
+  spawnRadius: 8.49
+--- !u!114 &1878049465713571598
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7151499277139243693}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 48ea855e8d496f54fb1f9cb271115b76, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stonePrefab: {fileID: 1438215994702311756, guid: 03622cdcaefe4914fb13ac217ab9878c,
+    type: 3}
+  hasSpawned: 0
+  howManyToSpawn: 7
+  spawnRadius: 8.18
+--- !u!114 &6483792124506099814
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7151499277139243693}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 48ea855e8d496f54fb1f9cb271115b76, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stonePrefab: {fileID: 1438215994702311756, guid: 03622cdcaefe4914fb13ac217ab9878c,
+    type: 3}
+  hasSpawned: 0
+  howManyToSpawn: 7
+  spawnRadius: 8.18
 --- !u!65 &326373149803595009
 BoxCollider:
   m_ObjectHideFlags: 0

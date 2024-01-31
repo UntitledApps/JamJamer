@@ -10,11 +10,13 @@ using Random = UnityEngine.Random;
 
 public class IslandBehav : MonoBehaviour
 {
-    [SerializeField] private float destroyTimer;
+    [SerializeField] private float distanceTillDestroy;
     [SerializeField] private GameObject newIsland;
     private static GameObject newestIsland;
+    public GameObject player;
     public bool isNewestIsland;
     private bool exitDidntHappened = true;
+    private bool playerLeft;
 
     private Vector3 placementVec;
     private void FixedUpdate()
@@ -23,18 +25,21 @@ public class IslandBehav : MonoBehaviour
         {
             clone();
         }
+
+        if ((player.transform.position.y - transform.position.y) > distanceTillDestroy && playerLeft)
+        {
+            Destroy(this.gameObject);
+        }
     }
 
     private void OnTriggerExit(Collider other)
     {
         if (other.gameObject.CompareTag("Player") && exitDidntHappened)
         {
-            print("island placed"); 
             exitDidntHappened = false;
             
             newestIsland.GetComponent<IslandBehav>().isNewestIsland = true;
-            StartCoroutine(DestroyTimer());
-
+            playerLeft = true;
         }
     }
     private void clone()
@@ -76,11 +81,5 @@ public class IslandBehav : MonoBehaviour
         placementVec.y = Random.Range(15, 19);
 
         return placementVec;
-    }
-    IEnumerator DestroyTimer()
-    {
-        print("now");
-        yield return new WaitForSeconds(destroyTimer);
-        Destroy(this.gameObject);
     }
 }

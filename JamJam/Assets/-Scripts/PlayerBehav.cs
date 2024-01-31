@@ -8,15 +8,16 @@ using UnityEngine.Serialization;
 using Vector3 = UnityEngine.Vector3;
 using Vector2 = UnityEngine.Vector2;
 
-public class PlayerMovement : MonoBehaviour
+public class PlayerBehav : MonoBehaviour
 {
     [SerializeField] private float mouseSens, moveSpeed, groundedSpeed, JumpPower, hookPower, hookVertPush;
-    [SerializeField] private GameObject Cam, Stone, StoneHolder, GrassHolder;
+    [SerializeField] private GameObject Cam, Stone, StoneHolder, GrassHolder, StoneDisplay;
     [SerializeField] private HookHitSpacBehav HookHitSpaceBehav;
     private Vector3 moveVec, hookVec, origVelo;
     private Vector2 mouseInput;
     private float camLookAngle;
-    private bool grounded, hasStone, isHittingStone;
+    private bool grounded, hasStone;
+    [NonSerialized] public bool isHittingStone = false;
     private Rigidbody rb;
 
     private void Awake()
@@ -24,6 +25,8 @@ public class PlayerMovement : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
+
+        StoneDisplay.SetActive(false);
     }
 
     private void OnMove(InputValue value)
@@ -63,10 +66,13 @@ public class PlayerMovement : MonoBehaviour
         if (hasStone)
         {
             Instantiate(Stone, StoneHolder.transform.position, StoneHolder.transform.rotation);
+            StoneDisplay.SetActive(false);
+            hasStone = false;   
         }
         else if (isHittingStone)
         {
             hasStone = true;
+            StoneDisplay.SetActive(true);
         }
     }
 
@@ -85,8 +91,6 @@ public class PlayerMovement : MonoBehaviour
     private void FixedUpdate()
     {
         rb.velocity += transform.forward * moveVec.y + transform.right * moveVec.x;
-
-        // print(hookVec);
     }
 
     private void OnCollisionStay(Collision other)
@@ -96,12 +100,16 @@ public class PlayerMovement : MonoBehaviour
             grounded = true;
         }
     }
-
     private void OnCollisionExit(Collision other)
     {
         if (other.gameObject.CompareTag("Ground"))
         {
             grounded = false;
         }
+    }
+
+    private void Update()
+    {
+        //print(isHittingStone);
     }
 }
