@@ -16,6 +16,8 @@ public class Cricket : MonoBehaviour
    
     
     private Rigidbody rb;
+    
+    private Vector3 lookDirection;
     // Start is called before the first frame update
     void Start()
     
@@ -33,12 +35,23 @@ public class Cricket : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-       
-        transform.position = Vector3.MoveTowards(transform.position, player.position, runSpeed * Time.fixedDeltaTime);
-        transform.right = player.position - transform.position;
+        // Move towards the target
+        transform.position = Vector3.MoveTowards(transform.position, player.position, runSpeed * Time.deltaTime);
 
+        // Calculate the direction to the target
+        Vector3 targetPosition = player.position;
+        targetPosition.y = transform.position.y;
+        Vector3 lookDirection = (targetPosition - transform.position).normalized;
+
+        // Calculate the rotation towards the target
+        Quaternion targetRotation = Quaternion.LookRotation(lookDirection);
+        targetRotation *= Quaternion.Euler(0, -90, 0);
+
+        // Rotate towards the target
+        transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, 5 * Time.deltaTime);
     }
-
+      
+    
   
 
     void jumpInTheAir()
