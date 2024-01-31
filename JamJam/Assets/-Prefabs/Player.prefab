@@ -83,14 +83,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mouseSens: 0.3
   moveSpeed: 0.4
+  groundedSpeed: 0.6
   JumpPower: 2500
   hookPower: 300
-  hookVertPush: 7000
+  hookVertPush: 8500
   Cam: {fileID: 7925721465896613805}
   Stone: {fileID: 8502668361005643745, guid: 1739e4f52aa5ff64a9cd6270182a41ee, type: 3}
   StoneHolder: {fileID: 3840561102864218292}
   GrassHolder: {fileID: 8290869156301464447}
-  HookHitSpacBehav: {fileID: 4245667775008643878}
+  HookHitSpaceBehav: {fileID: 4245667775008643878}
 --- !u!54 &1125702610360218036
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -277,11 +278,11 @@ Camera:
   m_ShutterSpeed: 0.005
   m_Aperture: 16
   m_FocusDistance: 10
-  m_FocalLength: 50
+  m_FocalLength: 10.069196
   m_BladeCount: 5
   m_Curvature: {x: 2, y: 11}
   m_BarrelClipping: 0.25
-  m_Anamorphism: 0
+  m_Anamorphism: 1
   m_SensorSize: {x: 36, y: 24}
   m_LensShift: {x: 0, y: 0}
   m_NormalizedViewPortRect:
@@ -291,8 +292,8 @@ Camera:
     width: 1
     height: 1
   near clip plane: 0.3
-  far clip plane: 1000
-  field of view: 90
+  far clip plane: 3000
+  field of view: 100
   orthographic: 0
   orthographic size: 5
   m_Depth: -1
@@ -404,17 +405,17 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 83033e705fe55c440abcd6bafb32f1d0,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.07181142
+      value: 0.15115586
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 83033e705fe55c440abcd6bafb32f1d0,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.32578897
+      value: 0.3910705
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 83033e705fe55c440abcd6bafb32f1d0,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.07181142
+      value: 0.15115586
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 83033e705fe55c440abcd6bafb32f1d0,
         type: 3}

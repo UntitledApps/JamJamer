@@ -13,18 +13,14 @@ public class HookHitSpacBehav : MonoBehaviour
         if (other.gameObject.tag == "Cricket")
         {
             hookPos = other.gameObject.transform.position;
-            
-            print(hookPos);
 
         }
     }
     private void OnTriggerStay(Collider other)
     {
-        if (other.gameObject.tag == "Cricket")
+        if (other.gameObject.CompareTag("Cricket"))
         {
             hookPos = other.gameObject.transform.position;
-            
-            print(hookPos);
         }
     }
     private void OnTriggerExit(Collider other)
@@ -33,9 +29,5 @@ public class HookHitSpacBehav : MonoBehaviour
         {
             hookPos = Vector3.zero;
         }
-    }
-
-    private void Update()
-    {
     }
 }

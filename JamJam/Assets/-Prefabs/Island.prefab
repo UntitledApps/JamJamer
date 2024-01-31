@@ -28,7 +28,7 @@ Transform:
   m_GameObject: {fileID: 314551731123039838}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 16.7, z: 0}
+  m_LocalPosition: {x: 0, y: 10.92, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -133,7 +133,7 @@ Transform:
   m_GameObject: {fileID: 1583791613181099331}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -0.25, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -222,7 +222,6 @@ GameObject:
   - component: {fileID: 5483809201760749929}
   - component: {fileID: 3700236535055141756}
   - component: {fileID: 326373149803595009}
-  - component: {fileID: 4577000305439744378}
   m_Layer: 0
   m_Name: Island
   m_TagString: IslandHeight
@@ -259,9 +258,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cc8b1ba9595d44d46916cc16c819d6ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isNewestIsland: 0
   destroyTimer: 5
   newIsland: {fileID: 7151499277139243693}
+  isNewestIsland: 0
 --- !u!65 &326373149803595009
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -281,20 +280,5 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 50, y: 1, z: 50}
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &4577000305439744378
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7151499277139243693}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cc8b1ba9595d44d46916cc16c819d6ac, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isNewestIsland: 0
-  destroyTimer: 5
-  newIsland: {fileID: 7151499277139243693}
+  m_Size: {x: 50, y: 20.018768, z: 50}
+  m_Center: {x: 0, y: 6.2338085, z: 0}
