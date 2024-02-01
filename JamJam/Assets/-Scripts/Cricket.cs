@@ -9,8 +9,11 @@ public class Cricket : MonoBehaviour
     bool hasntJumpedYet = true;
     [SerializeField] private float jumpForce = 10f;
     [SerializeField] private float runSpeed = 4f;
+    [SerializeField] private AudioClip zirpenSound;
+    [SerializeField] private List<AudioClip> zishSounds;
     private Transform playerPos;
     
+    private AudioSource audioSource;
     private Rigidbody rb;
     
     private Vector3 lookDirection;
@@ -20,12 +23,19 @@ public class Cricket : MonoBehaviour
     {
         rb = GetComponent<Rigidbody>();
         anim = GetComponent<Animator>();
+        audioSource = GetComponent<AudioSource>();
         playerPos = GameObject.FindGameObjectWithTag("Player").transform;
       
     }
     
     public void SetSpeed(float speed)
     {
+        
+audioSource.clip = zirpenSound;
+audioSource.loop = true;
+audioSource.volume = 0.2f;
+audioSource.Play();
+     
         runSpeed = speed;
         
     }
@@ -57,6 +67,9 @@ public class Cricket : MonoBehaviour
     {
         hasntJumpedYet = false;
         anim.SetTrigger("Jump");
+        audioSource.loop = false;
+        audioSource.volume = 1f;
+        audioSource.PlayOneShot(      zishSounds[UnityEngine.Random.Range(0, zishSounds.Count)]);
         rb.AddForce(new Vector3(0, jumpForce, 0), ForceMode.Impulse);
     }
     private void OnCollisionEnter(Collision other)
