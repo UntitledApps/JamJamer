@@ -12,8 +12,8 @@ using UnityEngine.SceneManagement;
 public class PlayerBehav : MonoBehaviour
 {
     [SerializeField] private float mouseSens, moveSpeed, groundedSpeed, JumpPower, hookPower, hookVertPush;
-    [SerializeField] private Transform Cam, Stone, StoneHolder, GrassHolder, CricketPullPos;
-    [SerializeField] private GameObject DeathPlane, StoneDisplay, walkingParix;
+    [SerializeField] private Transform Cam, StoneHolder, GrassHolder, CricketPullPos;
+    [SerializeField] private GameObject StoneDisplay, walkingParix, Stone;
     [SerializeField] private HookHitSpacBehav HookHitSpaceBehav;
     [SerializeField] private PickupHitSpaceBehav PickupHitSpaceBehav;
     private Vector3 moveVec, hookVec, origVelo, pushToCricketPullPos;

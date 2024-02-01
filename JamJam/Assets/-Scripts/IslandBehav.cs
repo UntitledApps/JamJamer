@@ -28,6 +28,7 @@ public class IslandBehav : MonoBehaviour
             isNewestIsland = true;
         }
 
+        DeathPlane = GameObject.Find("DeathPlane");
         playerPos = GameObject.FindGameObjectWithTag("Player").transform;
     }
 
@@ -40,9 +41,7 @@ public class IslandBehav : MonoBehaviour
 
         if ((playerPos.transform.position.y - transform.position.y) >= distanceTillDestroy)
         {
-            Destroy(GameObject.Find("DeathPlane"));
-
-            Instantiate(DeathPlane, transform.position, Quaternion.identity);
+            DeathPlane.transform.position = transform.position + Vector3.down * 10;
             
             Destroy(this.gameObject);
         }
