@@ -14,17 +14,20 @@ public class Cricket : MonoBehaviour
     private Rigidbody rb;
     
     private Vector3 lookDirection;
-    private AnimationC
+    private Animator anim;
     // Start is called before the first frame update
     void Awake()
     {
         rb = GetComponent<Rigidbody>();
+        anim = GetComponent<Animator>();
         playerPos = GameObject.FindGameObjectWithTag("Player").transform;
+      
     }
     
     public void SetSpeed(float speed)
     {
         runSpeed = speed;
+        
     }
 
     // Update is called once per frame
@@ -53,6 +56,7 @@ public class Cricket : MonoBehaviour
     void jumpInTheAir()
     {
         hasntJumpedYet = false;
+        anim.SetTrigger("Jump");
         rb.AddForce(new Vector3(0, jumpForce, 0), ForceMode.Impulse);
     }
     private void OnCollisionEnter(Collision other)
