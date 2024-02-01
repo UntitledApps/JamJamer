@@ -11,7 +11,7 @@ using Random = UnityEngine.Random;
 public class IslandBehav : MonoBehaviour
 {
     [SerializeField] private float distanceTillDestroy;
-    [SerializeField] private GameObject newIsland;
+    public GameObject newIsland;
     private static GameObject newestIsland;
     public Transform playerPos;
     public bool isNewestIsland;

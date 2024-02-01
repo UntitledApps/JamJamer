@@ -7,18 +7,28 @@ using UnityEngine;
 public class PickupHitSpaceBehav : MonoBehaviour
 {
     [NonSerialized] public GameObject pickedUpObject;
+
     private void OnTriggerEnter(Collider other)
     {
-        pickedUpObject = other.gameObject;
+        if (other.gameObject.CompareTag("Pickupable"))
+        {
+            pickedUpObject = other.gameObject;
+        }
     }
 
     private void OnTriggerStay(Collider other)
     {
-        pickedUpObject = other.gameObject;
+        if (other.gameObject.CompareTag("Pickupable"))
+        {
+            pickedUpObject = other.gameObject;
+        }
     }
 
     private void OnTriggerExit(Collider other)
     {
-        pickedUpObject = null;
+        if (other.gameObject.CompareTag("Pickupable"))
+        {
+            pickedUpObject = null;
+        }
     }
 }

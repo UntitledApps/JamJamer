@@ -12,7 +12,7 @@ public class PlayerBehav : MonoBehaviour
     [SerializeField] private GameObject StoneDisplay;
     [SerializeField] private HookHitSpacBehav HookHitSpaceBehav;
     [SerializeField] private PickupHitSpaceBehav PickupHitSpaceBehav;
-    private Vector3 moveVec, hookVec, origVelo;
+    private Vector3 moveVec, hookVec, origVelo, pushToCricketPullPos;
     private Vector2 mouseInput;
     private float camLookAngle;
     private bool grounded, hasStone;
@@ -80,15 +80,17 @@ public class PlayerBehav : MonoBehaviour
     {
         if (HookHitSpaceBehav.hookedEnemy != null)
         {
+            HookHitSpaceBehav.hookedEnemy.tag = "Cricket";
+            HookHitSpaceBehav.hookedEnemy.GetComponent<BoxCollider>().enabled = !HookHitSpaceBehav.hookedEnemy.GetComponent<BoxCollider>().enabled;
+            
             hookVec.x = (HookHitSpaceBehav.hookedEnemy.transform.position.x - transform.position.x) * hookPower;
             hookVec.z = (HookHitSpaceBehav.hookedEnemy.transform.position.z - transform.position.z) * hookPower;
             hookVec.y = hookVertPush;
-
             rb.AddForce(hookVec);
+
+            pushToCricketPullPos = CricketPullPos.transform.position - HookHitSpaceBehav.hookedEnemy.transform.position;
             
-            HookHitSpaceBehav.hookedEnemy.GetComponent<Rigidbody>().AddForce(Vector3.up * 10000);
-            
-            Invoke(nameof(DestroyHookedEnemy), 2f);
+            HookHitSpaceBehav.hookedEnemy.GetComponent<Rigidbody>().AddForce(pushToCricketPullPos * 300);
         }
     }
 
@@ -96,7 +98,6 @@ public class PlayerBehav : MonoBehaviour
     {
         rb.velocity += transform.forward * moveVec.y + transform.right * moveVec.x;
     }
-
     private void OnCollisionStay(Collision other)
     {
         if (other.gameObject.CompareTag("Ground"))
@@ -110,9 +111,5 @@ public class PlayerBehav : MonoBehaviour
         {
             grounded = false;
         }
-    }
-    private void DestroyHookedEnemy()
-    {
-        Destroy(HookHitSpaceBehav.hookedEnemy);
     }
 }

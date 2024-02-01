@@ -10,12 +10,10 @@ public class StoneSpawner : MonoBehaviour
     [SerializeField] private int howManyToSpawn = 5;
     [SerializeField] private float spawnRadius = 5f;
 
-    private void OnDrawGizmos()
+    private void OnEnable()
     {
-        Gizmos.color = Color.red;
-        //Gizmos.DrawWireSphere(transform.position, spawnRadius);
+        hasSpawned = false;
     }
-
 
     void SpawnStones()
     {

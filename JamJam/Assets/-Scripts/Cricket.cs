@@ -49,10 +49,6 @@ public class Cricket : MonoBehaviour
             Destroy(this.gameObject);
         }
     }
-      
-    
-  
-
     void jumpInTheAir()
     {
         hasntJumpedYet = false;
@@ -67,11 +63,11 @@ public class Cricket : MonoBehaviour
                 Destroy(gameObject);
             }
         }
-        
         if(other.gameObject.CompareTag("Stone"))
         {
             if (hasntJumpedYet)
             {
+                gameObject.tag = "HitableCricket";
                 jumpInTheAir();
             }   
         }

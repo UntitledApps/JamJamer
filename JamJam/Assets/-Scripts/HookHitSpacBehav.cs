@@ -12,7 +12,7 @@ public class HookHitSpacBehav : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("Cricket"))
+        if (other.gameObject.CompareTag("HitableCricket"))
         {
             hookedEnemy = other.gameObject;
         }
@@ -20,7 +20,7 @@ public class HookHitSpacBehav : MonoBehaviour
 
     private void OnCollisionStay(Collision other)
     {
-        if (other.gameObject.CompareTag("Cricket"))
+        if (other.gameObject.CompareTag("HitableCricket"))
         {
             hookedEnemy = other.gameObject;
         }
@@ -28,7 +28,7 @@ public class HookHitSpacBehav : MonoBehaviour
     
     private void OnTriggerExit(Collider other)
     {
-        if (other.gameObject.CompareTag("Cricket"))
+        if (other.gameObject.CompareTag("HitableCricket"))
         {
             hookedEnemy = null;
         }

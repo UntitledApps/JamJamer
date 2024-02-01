@@ -11,6 +11,7 @@ TagManager:
   - StoneCollectible
   - IslandHeight
   - Pickupable
+  - HitableCricket
   layers:
   - Default
   - TransparentFX
