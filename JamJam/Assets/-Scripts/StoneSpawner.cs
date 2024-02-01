@@ -20,7 +20,7 @@ public class StoneSpawner : MonoBehaviour
         for (int i = 0; i < howManyToSpawn; i++)
         {
             Vector2 randomPos = Random.insideUnitCircle * spawnRadius;
-            Vector3 spawnPosition = new Vector3(randomPos.x, 0f, randomPos.y) + transform.position;
+            Vector3 spawnPosition = new Vector3(randomPos.x, 1f, randomPos.y) + transform.position;
             Instantiate(stonePrefab, spawnPosition, Quaternion.Euler(Random.Range(0.0f, 360.0f), Random.Range(0.0f, 360.0f), Random.Range(0.0f, 360.0f)));
         }
     }

@@ -24,7 +24,7 @@ public class CricketSpawner : MonoBehaviour
         Vector2 randomPos = Random.insideUnitCircle * spawnRadius;
 
         // Convert 2D position to 3D by adding a constant Y value
-        Vector3 spawnPosition = new Vector3(randomPos.x, 0f, randomPos.y) + transform.position;
+        Vector3 spawnPosition = new Vector3(randomPos.x, 1f, randomPos.y) + transform.position;
 
         GameObject spawnedCricket = Instantiate(cricketPrefab, spawnPosition, Quaternion.identity);
         spawnedCricket.GetComponent<Cricket>().SetSpeed(cricketSpeed);
@@ -45,7 +45,6 @@ public class CricketSpawner : MonoBehaviour
         {
             if (!hasSpawned)
             {
-                print("has");
                 Spawn();
                 hasSpawned = true;
             }

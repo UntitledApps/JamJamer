@@ -10,7 +10,7 @@ using Random = UnityEngine.Random;
 
 public class IslandBehav : MonoBehaviour
 {
-    [SerializeField] private float distanceTillDestroy, distanceTillTrigger, startingIslandCount;
+    [SerializeField] private float distanceTillDestroy, startingIslandCount;
     private static int IslandsPresent = 0;
     public GameObject newIsland;
     private static GameObject newestIsland;
@@ -23,6 +23,7 @@ public class IslandBehav : MonoBehaviour
     private void Awake()
     {
         IslandsPresent++;
+        print(IslandsPresent);
 
         if (IslandsPresent <= startingIslandCount)
         {
@@ -39,15 +40,22 @@ public class IslandBehav : MonoBehaviour
             clone();
         }
 
-        if ((transform.position.y - playerPos.transform.position.y) <= distanceTillTrigger)
-        {
-            print("island triggered " + (this.gameObject.transform.position.y));
-            newestIsland.GetComponent<IslandBehav>().isNewestIsland = true;
-        }
-
         if ((playerPos.transform.position.y - transform.position.y) >= distanceTillDestroy)
         {
-            Destroy(this.gameObject);   
+            Destroy(this.gameObject);
+        }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("Player"))
+        {
+            if (!playerEntered)
+            {
+                playerEntered = true;
+
+                newestIsland.GetComponent<IslandBehav>().isNewestIsland = true;
+            }
         }
     }
 
@@ -55,7 +63,8 @@ public class IslandBehav : MonoBehaviour
     {
         isNewestIsland = false;
 
-        newestIsland = Instantiate(newIsland, transform.position + GenerateVector(), Quaternion.Euler(0, Random.Range(0.0f, 360.0f), 0));
+        newestIsland = Instantiate(newIsland, transform.position + GenerateVector(),
+            Quaternion.Euler(0, Random.Range(0.0f, 360.0f), 0));
     }
 
     private Vector3 GenerateVector()
