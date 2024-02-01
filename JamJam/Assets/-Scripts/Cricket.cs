@@ -14,6 +14,7 @@ public class Cricket : MonoBehaviour
     private Rigidbody rb;
     
     private Vector3 lookDirection;
+    private AnimationC
     // Start is called before the first frame update
     void Awake()
     {
