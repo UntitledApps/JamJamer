@@ -291,7 +291,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   jumpForce: 20
   runSpeed: 4
-  zirpenSound: {fileID: 8300000, guid: f8a31e55789a99e41a1900ffe778204d, type: 3}
+  zirpenSound: {fileID: 8300000, guid: d9a536c58c3e0694b99a541c6eb48600, type: 3}
   zishSounds:
   - {fileID: 8300000, guid: dac86e0ee4ea07c409d09bc28b2d2141, type: 3}
   - {fileID: 8300000, guid: 71d603476f66fd0498606329d5144e21, type: 3}

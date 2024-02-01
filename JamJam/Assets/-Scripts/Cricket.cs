@@ -74,7 +74,7 @@ audioSource.Play();
     }
     private void OnCollisionEnter(Collision other)
     {
-        if(other.gameObject.CompareTag("Ground"))
+        if(other.gameObject.CompareTag("Ground") || other.gameObject.CompareTag("Player"))
         {
             if(!hasntJumpedYet)
             {
