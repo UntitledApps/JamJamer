@@ -9897,8 +9897,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   distanceTillDestroy: 100
-  startingIslandCount: 0
-  IslandsPresent: 0
+  startingIslandCount: 5
   newIsland: {fileID: 7151499277139243693}
   playerPos: {fileID: 0}
   isNewestIsland: 1
@@ -9957,7 +9956,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 50, y: 20.018768, z: 50}
+  m_Size: {x: 1000000, y: 20.018768, z: 1000000}
   m_Center: {x: 0, y: 6.2338085, z: 0}
 --- !u!1 &7167354439079541607
 GameObject:
