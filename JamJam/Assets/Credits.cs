@@ -10,7 +10,7 @@ public class Credits : MonoBehaviour
     void Start()
     {
         rectTransform = GetComponent<RectTransform>();
-        rectTransform.DOMoveY(1815, 10f).SetEase(Ease.Linear).SetLoops(-1);
+        rectTransform.DOMoveZ(-1815, 10f).SetEase(Ease.Linear).SetLoops(-1);
         rectTransform.DORotate(new Vector3(15, 0, 0), duration: 10, RotateMode.Fast).SetLoops(-1);
     }
 
