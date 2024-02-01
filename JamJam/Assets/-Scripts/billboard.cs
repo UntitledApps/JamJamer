@@ -5,6 +5,8 @@ using UnityEngine;
 public class billboard : MonoBehaviour
 {
     private Camera cam;
+    public bool useStaticBillboard;
+
     void Start()
     {
         cam = Camera.main;
@@ -12,8 +14,14 @@ public class billboard : MonoBehaviour
 
     void LateUpdate()
     {
-        transform.LookAt(cam.transform);
-
+        if (!useStaticBillboard)
+        {
+            transform.LookAt(cam.transform);
+        }
+        else
+        {
+            transform.rotation = cam.transform.rotation;
+        }
         transform.rotation = Quaternion.Euler(0f, transform.rotation.eulerAngles.y, 0f);
     }
 }
