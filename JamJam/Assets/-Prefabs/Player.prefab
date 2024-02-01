@@ -145,6 +145,37 @@ Transform:
   m_Children: []
   m_Father: {fileID: 3924563457668841509}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &3937311532823508503
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2130789409856885489}
+  m_Layer: 0
+  m_Name: CricketPullPos
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2130789409856885489
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3937311532823508503}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1.59, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3924563457668841509}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &4790776067095753373
 GameObject:
   m_ObjectHideFlags: 0
@@ -403,6 +434,7 @@ MonoBehaviour:
   Stone: {fileID: 4848141382580240284, guid: 1739e4f52aa5ff64a9cd6270182a41ee, type: 3}
   StoneHolder: {fileID: 1731272720133445482}
   GrassHolder: {fileID: 3140218059085419056}
+  CricketPullPos: {fileID: 2130789409856885489}
   StoneDisplay: {fileID: 7602390819761070620}
   HookHitSpaceBehav: {fileID: 4303130186445077534}
   PickupHitSpaceBehav: {fileID: 6920647011922256600}
@@ -574,6 +606,7 @@ Transform:
   - {fileID: 5422043222034047184}
   - {fileID: 1137950378505494882}
   - {fileID: 8467521157641714091}
+  - {fileID: 2130789409856885489}
   m_Father: {fileID: 214021986572159746}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!20 &5452999438258057082

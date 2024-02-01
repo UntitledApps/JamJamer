@@ -8,7 +8,7 @@ using UnityEngine.InputSystem;
 public class PlayerBehav : MonoBehaviour
 {
     [SerializeField] private float mouseSens, moveSpeed, groundedSpeed, JumpPower, hookPower, hookVertPush;
-    [SerializeField] private Transform Cam, Stone, StoneHolder, GrassHolder;
+    [SerializeField] private Transform Cam, Stone, StoneHolder, GrassHolder, CricketPullPos;
     [SerializeField] private GameObject StoneDisplay;
     [SerializeField] private HookHitSpacBehav HookHitSpaceBehav;
     [SerializeField] private PickupHitSpaceBehav PickupHitSpaceBehav;
@@ -86,7 +86,7 @@ public class PlayerBehav : MonoBehaviour
 
             rb.AddForce(hookVec);
             
-            HookHitSpaceBehav.hookedEnemy.GetComponent<Rigidbody>().AddForce(Vector3.up * 100);
+            HookHitSpaceBehav.hookedEnemy.GetComponent<Rigidbody>().AddForce(Vector3.up * 10000);
             
             Invoke(nameof(DestroyHookedEnemy), 2f);
         }
@@ -111,14 +111,8 @@ public class PlayerBehav : MonoBehaviour
             grounded = false;
         }
     }
-
     private void DestroyHookedEnemy()
     {
         Destroy(HookHitSpaceBehav.hookedEnemy);
-    }
-    
-    private void Update()
-    {
-        //print(isHittingStone);
     }
 }
