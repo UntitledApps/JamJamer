@@ -19,6 +19,7 @@ public class PlayerBehav : MonoBehaviour
     [NonSerialized] public bool isHittingStone = false;
     private Rigidbody rb;
 
+    // sasd
     private void Awake()
     {
         rb = GetComponent<Rigidbody>();
