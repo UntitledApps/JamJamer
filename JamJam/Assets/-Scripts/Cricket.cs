@@ -20,8 +20,7 @@ public class Cricket : MonoBehaviour
     private Vector3 lookDirection;
     // Start is called before the first frame update
     void Start()
-    
-    {
+    {               
         rb = GetComponent<Rigidbody>();
         player = GameObject.FindGameObjectWithTag("Player").transform;
        
