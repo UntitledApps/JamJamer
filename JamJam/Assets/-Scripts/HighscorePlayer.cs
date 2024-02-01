@@ -8,8 +8,6 @@ using UnityEngine;
 public class HighscorePlayer : MonoBehaviour
 {
     [SerializeField] private TMP_Text scoreText;
-
-
     private float characterPositionY; // Variable to store the character's Y position
     private float unitsMoved; // Variable to count the number of units moved
 
