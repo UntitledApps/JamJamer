@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class StoneBehav : MonoBehaviour
+public class ShootingStoneBehav : MonoBehaviour
 {
     [SerializeField] private float stoneSpeed, HopUp, lifeTime;
     [SerializeField] private Rigidbody rb;

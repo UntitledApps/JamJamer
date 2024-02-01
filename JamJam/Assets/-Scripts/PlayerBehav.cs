@@ -4,15 +4,14 @@ using System.Collections.Generic;
 using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.InputSystem;
-using UnityEngine.Serialization;
-using Vector3 = UnityEngine.Vector3;
-using Vector2 = UnityEngine.Vector2;
 
 public class PlayerBehav : MonoBehaviour
 {
     [SerializeField] private float mouseSens, moveSpeed, groundedSpeed, JumpPower, hookPower, hookVertPush;
-    [SerializeField] private GameObject Cam, Stone, StoneHolder, GrassHolder, StoneDisplay;
+    [SerializeField] private Transform Cam, Stone, StoneHolder, GrassHolder;
+    [SerializeField] private GameObject StoneDisplay;
     [SerializeField] private HookHitSpacBehav HookHitSpaceBehav;
+    [SerializeField] private PickupHitSpaceBehav PickupHitSpaceBehav;
     private Vector3 moveVec, hookVec, origVelo;
     private Vector2 mouseInput;
     private float camLookAngle;
@@ -69,8 +68,9 @@ public class PlayerBehav : MonoBehaviour
             StoneDisplay.SetActive(false);
             hasStone = false;   
         }
-        else if (isHittingStone)
+        else if (PickupHitSpaceBehav.pickedUpObject != null)
         {
+            Destroy(PickupHitSpaceBehav.pickedUpObject);
             hasStone = true;
             StoneDisplay.SetActive(true);
         }
@@ -86,8 +86,9 @@ public class PlayerBehav : MonoBehaviour
 
             rb.AddForce(hookVec);
             
-            Invoke(nameof(DestroyHookedEnemy), 0);
-            print("woooo");
+            HookHitSpaceBehav.hookedEnemy.GetComponent<Rigidbody>().AddForce(Vector3.up * 100);
+            
+            Invoke(nameof(DestroyHookedEnemy), 2f);
         }
     }
 

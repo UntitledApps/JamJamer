@@ -6,23 +6,19 @@ using UnityEngine;
 
 public class Cricket : MonoBehaviour
 {
-    
     bool hasntJumpedYet = true;
     [SerializeField] private float jumpForce = 10f;
     [SerializeField] private float runSpeed = 4f;
-    private Transform player;
-    
-   
+    private Transform playerPos;
     
     private Rigidbody rb;
     
     private Vector3 lookDirection;
     // Start is called before the first frame update
-    void Start()
-    {               
+    void Awake()
+    {
         rb = GetComponent<Rigidbody>();
-        player = GameObject.FindGameObjectWithTag("Player").transform;
-       
+        playerPos = GameObject.FindGameObjectWithTag("Player").transform;
     }
     
     public void SetSpeed(float speed)
@@ -34,10 +30,10 @@ public class Cricket : MonoBehaviour
     void FixedUpdate()
     {
         // Move towards the target
-        transform.position = Vector3.MoveTowards(transform.position, player.position, runSpeed * Time.deltaTime);
+        transform.position = Vector3.MoveTowards(transform.position, playerPos.position, runSpeed * Time.deltaTime);
 
         // Calculate the direction to the target
-        Vector3 targetPosition = player.position;
+        Vector3 targetPosition = playerPos.position;
         targetPosition.y = transform.position.y;
         Vector3 lookDirection = (targetPosition - transform.position).normalized;
 
@@ -47,6 +43,11 @@ public class Cricket : MonoBehaviour
 
         // Rotate towards the target
         transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, 5 * Time.deltaTime);
+
+        if ((playerPos.transform.position.y - transform.position.y) > 100)
+        {
+            Destroy(this.gameObject);
+        }
     }
       
     
@@ -74,10 +75,5 @@ public class Cricket : MonoBehaviour
                 jumpInTheAir();
             }   
         }
-        
-        
-        
-        
-       
     }
 }

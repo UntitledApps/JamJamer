@@ -13,12 +13,17 @@ public class IslandBehav : MonoBehaviour
     [SerializeField] private float distanceTillDestroy;
     [SerializeField] private GameObject newIsland;
     private static GameObject newestIsland;
-    public GameObject player;
+    public Transform playerPos;
     public bool isNewestIsland;
     private bool exitDidntHappened = true;
     private bool playerLeft;
-
     private Vector3 placementVec;
+
+    private void Awake()
+    {
+        playerPos = GameObject.FindGameObjectWithTag("Player").transform;
+    }
+
     private void FixedUpdate()
     {
         if (isNewestIsland)
@@ -26,7 +31,7 @@ public class IslandBehav : MonoBehaviour
             clone();
         }
 
-        if ((player.transform.position.y - transform.position.y) > distanceTillDestroy && playerLeft)
+        if ((playerPos.transform.position.y - transform.position.y) > distanceTillDestroy && playerLeft)
         {
             Destroy(this.gameObject);
         }
@@ -46,8 +51,7 @@ public class IslandBehav : MonoBehaviour
     {
         isNewestIsland = false;
 
-        newestIsland = Instantiate(newIsland, transform.position + GenerateVector(), Quaternion.identity);
-        //print("Island Cloned !");
+        newestIsland = Instantiate(newIsland, transform.position + GenerateVector(), Quaternion.Euler(0, Random.Range(0.0f, 360.0f), 0));
     }
     private Vector3 GenerateVector()
     {

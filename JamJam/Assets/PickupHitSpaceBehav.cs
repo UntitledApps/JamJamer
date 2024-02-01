@@ -1,23 +1,24 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class PickupHitSpaceBehav : MonoBehaviour
 {
-    [SerializeField] private PlayerBehav playerBehav;
-
+    [NonSerialized] public GameObject pickedUpObject;
     private void OnTriggerEnter(Collider other)
     {
-        playerBehav.isHittingStone = true;
+        pickedUpObject = other.gameObject;
     }
 
     private void OnTriggerStay(Collider other)
     {
-        playerBehav.isHittingStone = true;
+        pickedUpObject = other.gameObject;
     }
 
     private void OnTriggerExit(Collider other)
     {
-        playerBehav.isHittingStone = false;
+        pickedUpObject = null;
     }
 }
