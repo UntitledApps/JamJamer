@@ -6,7 +6,7 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: hand_right
+  m_Name: right_hand
   serializedVersion: 7
   m_Legacy: 0
   m_Compressed: 0
@@ -27,9 +27,9 @@ AnimationClip:
     - time: 0.6666667
       value: {fileID: 21300000, guid: 32de7d20dea8c4547a1b5d3a453d35b6, type: 3}
     attribute: m_Sprite
-    path: Right hand back
-    classID: 114
-    script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+    path: right_hand_back_f1
+    classID: 212
+    script: {fileID: 0}
     flags: 2
   - serializedVersion: 2
     curve:
@@ -40,9 +40,9 @@ AnimationClip:
     - time: 0.6666667
       value: {fileID: 21300000, guid: 22c0b03e55cf0594480d6d5b63cacb04, type: 3}
     attribute: m_Sprite
-    path: right hand front
-    classID: 114
-    script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+    path: right_hand_front_f1
+    classID: 212
+    script: {fileID: 0}
     flags: 2
   m_SampleRate: 60
   m_WrapMode: 0
@@ -52,20 +52,20 @@ AnimationClip:
   m_ClipBindingConstant:
     genericBindings:
     - serializedVersion: 2
-      path: 2975992382
-      attribute: 2015549526
-      script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-      typeID: 114
-      customType: 0
+      path: 952946412
+      attribute: 0
+      script: {fileID: 0}
+      typeID: 212
+      customType: 23
       isPPtrCurve: 1
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     - serializedVersion: 2
-      path: 2428767716
-      attribute: 2015549526
-      script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-      typeID: 114
-      customType: 0
+      path: 4000675643
+      attribute: 0
+      script: {fileID: 0}
+      typeID: 212
+      customType: 23
       isPPtrCurve: 1
       isIntCurve: 0
       isSerializeReferenceCurve: 0
