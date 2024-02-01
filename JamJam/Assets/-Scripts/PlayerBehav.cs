@@ -90,7 +90,9 @@ public class PlayerBehav : MonoBehaviour
 
             pushToCricketPullPos = CricketPullPos.transform.position - HookHitSpaceBehav.hookedEnemy.transform.position;
             
-            HookHitSpaceBehav.hookedEnemy.GetComponent<Rigidbody>().AddForce(pushToCricketPullPos * 300);
+            HookHitSpaceBehav.hookedEnemy.GetComponent<Rigidbody>().AddForce(pushToCricketPullPos * 150);
+            
+            //Destroy(HookHitSpaceBehav.hookedEnemy);            
         }
     }
 
