@@ -18,7 +18,7 @@ public class CricketSpawner : MonoBehaviour
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.green;
-        Gizmos.DrawWireSphere(transform.position, spawnRadius);
+        //Gizmos.DrawWireSphere(transform.position, spawnRadius);
     }
 
     

@@ -15,7 +15,7 @@ public class StoneSpawner : MonoBehaviour
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(transform.position, spawnRadius);
+        //Gizmos.DrawWireSphere(transform.position, spawnRadius);
     }
 
     

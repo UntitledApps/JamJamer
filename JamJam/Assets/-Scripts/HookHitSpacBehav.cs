@@ -8,13 +8,13 @@ using UnityEngine.Serialization;
 
 public class HookHitSpacBehav : MonoBehaviour
 {
-    [NonSerialized] public Vector3 hookPos;
+    [NonSerialized] public GameObject hookedEnemy;
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("Cricket"))
         {
-            hookPos = other.gameObject.transform.position;
+            hookedEnemy = other.gameObject;
         }
     }
 
@@ -22,7 +22,7 @@ public class HookHitSpacBehav : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Cricket"))
         {
-            hookPos = other.gameObject.transform.position;
+            hookedEnemy = other.gameObject;
         }
     }
     
@@ -30,7 +30,7 @@ public class HookHitSpacBehav : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Cricket"))
         {
-            hookPos = Vector3.zero;
+            hookedEnemy = null;
         }
     }
 }
