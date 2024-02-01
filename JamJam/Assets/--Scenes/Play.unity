@@ -136,7 +136,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 109273860}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 172515602e62fb746b5d573b38a5fe58, type: 3}
   m_Name: 
@@ -376,6 +376,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3700236535055141756, guid: de94b3c680871a34a8b07abf2c930654,
         type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3700236535055141756, guid: de94b3c680871a34a8b07abf2c930654,
+        type: 3}
       propertyPath: playerPos
       value: 
       objectReference: {fileID: 8709995232394689135}
@@ -387,7 +392,7 @@ PrefabInstance:
     - target: {fileID: 3700236535055141756, guid: de94b3c680871a34a8b07abf2c930654,
         type: 3}
       propertyPath: startingIslandCount
-      value: 10
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 3700236535055141756, guid: de94b3c680871a34a8b07abf2c930654,
         type: 3}

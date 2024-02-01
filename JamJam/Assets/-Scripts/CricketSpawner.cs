@@ -45,6 +45,7 @@ public class CricketSpawner : MonoBehaviour
         {
             if (!hasSpawned)
             {
+                print("has");
                 Spawn();
                 hasSpawned = true;
             }
