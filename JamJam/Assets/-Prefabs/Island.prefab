@@ -4832,8 +4832,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1583791613181099331}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.25, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -20520,8 +20520,6 @@ MonoBehaviour:
   distanceTillDestroy: 100
   startingIslandCount: 5
   newIsland: {fileID: 7151499277139243693}
-  DeathPlane: {fileID: 9209279571241133063, guid: e77b58314c9ad1041a0ad61c42acb2c1,
-    type: 3}
   playerPos: {fileID: 0}
 --- !u!114 &8221911506062716181
 MonoBehaviour:

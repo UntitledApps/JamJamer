@@ -2,18 +2,15 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.Mathematics;
+using UnityEditor.SearchService;
 using UnityEngine;
 using UnityEngine.InputSystem;
-using UnityEngine.Rendering;
-using UnityEngine.Rendering.Universal;
-using UnityEngine.SceneManagement;
-
 
 public class PlayerBehav : MonoBehaviour
 {
     [SerializeField] private float mouseSens, moveSpeed, groundedSpeed, JumpPower, hookPower, hookVertPush;
-    [SerializeField] private Transform Cam, StoneHolder, GrassHolder, CricketPullPos;
-    [SerializeField] private GameObject StoneDisplay, walkingParix, Stone;
+    [SerializeField] private Transform Cam, Stone, StoneHolder, GrassHolder, CricketPullPos;
+    [SerializeField] private GameObject StoneDisplay;
     [SerializeField] private HookHitSpacBehav HookHitSpaceBehav;
     [SerializeField] private PickupHitSpaceBehav PickupHitSpaceBehav;
     private Vector3 moveVec, hookVec, origVelo, pushToCricketPullPos;
@@ -22,17 +19,14 @@ public class PlayerBehav : MonoBehaviour
     private bool grounded, hasStone;
     [NonSerialized] public bool isHittingStone = false;
     private Rigidbody rb;
-    private Volume volume;
-    private Bloom bloomLayer;
 
+    // sasd
     private void Awake()
     {
         rb = GetComponent<Rigidbody>();
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
-        //volume = gameObject.GetComponent<Volume>();
-        //volume.profile.TryGetSettings( out bloomLayer );
-        
+
         StoneDisplay.SetActive(false);
     }
 
@@ -56,8 +50,7 @@ public class PlayerBehav : MonoBehaviour
 
         camLookAngle = Mathf.Clamp(camLookAngle + mouseInput.y * mouseSens, -89, 89);
 
-        Cam.transform.rotation = Quaternion.Euler(-camLookAngle,
-            Cam.transform.rotation.eulerAngles.y, Cam.transform.rotation.eulerAngles.z);
+        Cam.transform.rotation = Quaternion.Euler(-camLookAngle, Cam.transform.rotation.eulerAngles.y, Cam.transform.rotation.eulerAngles.z);
     }
 
     private void OnJump()
@@ -105,15 +98,6 @@ public class PlayerBehav : MonoBehaviour
     private void FixedUpdate()
     {
         rb.velocity += transform.forward * moveVec.y + transform.right * moveVec.x;
-
-        if (grounded)
-        {
-            walkingParix.SetActive(true);
-        }
-        else if (!grounded)
-        {
-            walkingParix.SetActive(false);
-        }
     }
     private void OnCollisionStay(Collision other)
     {
@@ -134,12 +118,9 @@ public class PlayerBehav : MonoBehaviour
     {
         if (other.gameObject.CompareTag("DeathPlane"))
         {
-            ReloadPlayScene();
+            print("sdf");
+            
+            UnityEngine.SceneManagement.SceneManager.LoadScene("Play");
         }
-    }
-
-    private void ReloadPlayScene()
-    {
-        UnityEngine.SceneManagement.SceneManager.LoadScene("Play");
     }
 }

@@ -93,11 +93,6 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Pickupable
       objectReference: {fileID: 0}
-    - target: {fileID: 2203778310894725526, guid: 4791382a96d186c43b3547810ce441a7,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 9de26d9a7bde3194497df66a0e9d312a, type: 2}
     - target: {fileID: 8375074186159088007, guid: 4791382a96d186c43b3547810ce441a7,
         type: 3}
       propertyPath: m_Layer

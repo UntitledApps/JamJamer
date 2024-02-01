@@ -61,7 +61,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 9de26d9a7bde3194497df66a0e9d312a, type: 2}
+  - {fileID: 2100000, guid: 69a7cc03e0573da459d231498a5471a8, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -269,7 +269,7 @@ PrefabInstance:
     - target: {fileID: 7226355093668719611, guid: 624e7b72dae8b0a42b4671d72b6550b4,
         type: 3}
       propertyPath: InitialModule.startSpeed.scalar
-      value: 0
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 7226355093668719611, guid: 624e7b72dae8b0a42b4671d72b6550b4,
         type: 3}
@@ -278,33 +278,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7226355093668719611, guid: 624e7b72dae8b0a42b4671d72b6550b4,
         type: 3}
-      propertyPath: EmissionModule.rateOverTime.scalar
-      value: 40
-      objectReference: {fileID: 0}
-    - target: {fileID: 7226355093668719611, guid: 624e7b72dae8b0a42b4671d72b6550b4,
-        type: 3}
       propertyPath: InitialModule.startLifetime.scalar
       value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 7226355093668719611, guid: 624e7b72dae8b0a42b4671d72b6550b4,
-        type: 3}
-      propertyPath: InitialModule.startColor.maxColor.b
-      value: 0.33962262
-      objectReference: {fileID: 0}
-    - target: {fileID: 7226355093668719611, guid: 624e7b72dae8b0a42b4671d72b6550b4,
-        type: 3}
-      propertyPath: InitialModule.startColor.maxColor.g
-      value: 0.31132072
-      objectReference: {fileID: 0}
-    - target: {fileID: 7226355093668719611, guid: 624e7b72dae8b0a42b4671d72b6550b4,
-        type: 3}
-      propertyPath: InitialModule.startColor.maxColor.r
-      value: 0.30566037
-      objectReference: {fileID: 0}
-    - target: {fileID: 7226355093668719611, guid: 624e7b72dae8b0a42b4671d72b6550b4,
-        type: 3}
-      propertyPath: InitialModule.startColor.minColor.a
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

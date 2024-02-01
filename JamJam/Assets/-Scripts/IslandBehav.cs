@@ -12,23 +12,24 @@ public class IslandBehav : MonoBehaviour
 {
     [SerializeField] private float distanceTillDestroy, startingIslandCount;
     private static int IslandsPresent = 0;
-    public GameObject newIsland, DeathPlane;
+    public GameObject newIsland;
     private static GameObject newestIsland;
     public Transform playerPos;
     [NonSerialized] public bool isNewestIsland;
-    private bool exitDidntHappened = true;
+    //private bool exitDidntHappened = true;
     private bool playerEntered;
     private Vector3 placementVec;
 
     private void Awake()
     {
         IslandsPresent++;
+        print(IslandsPresent);
+
         if (IslandsPresent <= startingIslandCount)
         {
             isNewestIsland = true;
         }
 
-        DeathPlane = GameObject.Find("DeathPlane");
         playerPos = GameObject.FindGameObjectWithTag("Player").transform;
     }
 
@@ -41,8 +42,6 @@ public class IslandBehav : MonoBehaviour
 
         if ((playerPos.transform.position.y - transform.position.y) >= distanceTillDestroy)
         {
-            DeathPlane.transform.position = transform.position + Vector3.down * 10;
-            
             Destroy(this.gameObject);
         }
     }
