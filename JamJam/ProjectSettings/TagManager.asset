@@ -12,6 +12,7 @@ TagManager:
   - IslandHeight
   - Pickupable
   - HitableCricket
+  - DeathPlane
   layers:
   - Default
   - TransparentFX
