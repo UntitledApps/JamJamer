@@ -7,6 +7,11 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: phong1
+    second: {fileID: 2100000, guid: e830bab54f769184bba167dae0cb5d37, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: standardSurface1
     second: {fileID: 2100000, guid: 69a7cc03e0573da459d231498a5471a8, type: 2}
   materials:
