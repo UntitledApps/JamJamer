@@ -829,7 +829,7 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 4791382a96d186c43b3547810ce441a7,
         type: 3}
       propertyPath: m_Name
-      value: PickupableStones
+      value: StoneDisplay
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 4791382a96d186c43b3547810ce441a7,
         type: 3}

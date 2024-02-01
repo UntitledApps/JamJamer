@@ -7,8 +7,7 @@ using UnityEngine;
 public class Cricket : MonoBehaviour
 {
     
-    bool isOnGround = true;
-    
+    bool hasntJumpedYet = true;
     [SerializeField] private float jumpForce = 10f;
     [SerializeField] private float runSpeed = 4f;
     private Transform player;
@@ -56,15 +55,14 @@ public class Cricket : MonoBehaviour
 
     void jumpInTheAir()
     {
-        isOnGround = false;
+        hasntJumpedYet = false;
         rb.AddForce(new Vector3(0, jumpForce, 0), ForceMode.Impulse);
     }
     private void OnCollisionEnter(Collision other)
     {
-        
         if(other.gameObject.CompareTag("Ground"))
         {
-            if(!isOnGround)
+            if(!hasntJumpedYet)
             {
                 Destroy(gameObject);
             }
@@ -72,7 +70,7 @@ public class Cricket : MonoBehaviour
         
         if(other.gameObject.CompareTag("Stone"))
         {
-            if (isOnGround)
+            if (hasntJumpedYet)
             {
                 jumpInTheAir();
             }   

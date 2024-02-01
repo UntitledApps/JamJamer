@@ -78,13 +78,16 @@ public class PlayerBehav : MonoBehaviour
 
     private void OnHook()
     {
-        if (HookHitSpaceBehav.hookPos != Vector3.zero)
+        if (HookHitSpaceBehav.hookedEnemy != null)
         {
-            hookVec.x = (HookHitSpaceBehav.hookPos.x - transform.position.x) * hookPower;
-            hookVec.z = (HookHitSpaceBehav.hookPos.z - transform.position.z) * hookPower;
+            hookVec.x = (HookHitSpaceBehav.hookedEnemy.transform.position.x - transform.position.x) * hookPower;
+            hookVec.z = (HookHitSpaceBehav.hookedEnemy.transform.position.z - transform.position.z) * hookPower;
             hookVec.y = hookVertPush;
 
             rb.AddForce(hookVec);
+            
+            Invoke(nameof(DestroyHookedEnemy), 0);
+            print("woooo");
         }
     }
 
@@ -108,6 +111,11 @@ public class PlayerBehav : MonoBehaviour
         }
     }
 
+    private void DestroyHookedEnemy()
+    {
+        Destroy(HookHitSpaceBehav.hookedEnemy);
+    }
+    
     private void Update()
     {
         //print(isHittingStone);
