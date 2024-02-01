@@ -43,12 +43,10 @@ public class CricketSpawner : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            print("player entered");
             if (!hasSpawned)
             {
                 Spawn();
                 hasSpawned = true;
-                print("attempted spawn");
             }
         }
     }

@@ -11,6 +11,8 @@ using Random = UnityEngine.Random;
 public class IslandBehav : MonoBehaviour
 {
     [SerializeField] private float distanceTillDestroy;
+    private static int startingIslandCount;
+    [SerializeField] private int IslandsPresent;
     public GameObject newIsland;
     private static GameObject newestIsland;
     public Transform playerPos;
@@ -21,6 +23,15 @@ public class IslandBehav : MonoBehaviour
 
     private void Awake()
     {
+        startingIslandCount = 5;
+        
+        IslandsPresent++;
+
+        if (IslandsPresent <= startingIslandCount)
+        {
+            isNewestIsland = true;
+        }
+
         playerPos = GameObject.FindGameObjectWithTag("Player").transform;
     }
 
