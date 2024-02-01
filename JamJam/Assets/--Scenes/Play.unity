@@ -407,6 +407,12 @@ PrefabInstance:
       propertyPath: m_Name
       value: Island
       objectReference: {fileID: 0}
+    - target: {fileID: 8221911506062716181, guid: de94b3c680871a34a8b07abf2c930654,
+        type: 3}
+      propertyPath: cricketPrefab
+      value: 
+      objectReference: {fileID: 2357240018253529602, guid: cdba1489619b09d438269024a0eda4e8,
+        type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
