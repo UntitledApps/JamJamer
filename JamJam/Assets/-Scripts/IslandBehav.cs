@@ -11,7 +11,7 @@ using Random = UnityEngine.Random;
 public class IslandBehav : MonoBehaviour
 {
     [SerializeField] private float distanceTillDestroy, startingIslandCount;
-    [SerializeField] private int IslandsPresent;
+    private int IslandsPresent;
     public GameObject newIsland;
     private static GameObject newestIsland;
     public Transform playerPos;
@@ -23,7 +23,7 @@ public class IslandBehav : MonoBehaviour
     private void Awake()
     {
         startingIslandCount = 5;
-        
+
         IslandsPresent++;
 
         if (IslandsPresent <= startingIslandCount)
@@ -45,24 +45,24 @@ public class IslandBehav : MonoBehaviour
         {
             Destroy(this.gameObject);
         }
-    }
 
-    private void OnTriggerExit(Collider other)
-    {
-        if (other.gameObject.CompareTag("Player") && exitDidntHappened)
+        if ((playerPos.transform.position.y - transform.position.y) > distanceTillDestroy && playerLeft)
         {
             exitDidntHappened = false;
-            
+
             newestIsland.GetComponent<IslandBehav>().isNewestIsland = true;
             playerLeft = true;
         }
     }
+
     private void clone()
     {
         isNewestIsland = false;
 
-        newestIsland = Instantiate(newIsland, transform.position + GenerateVector(), Quaternion.Euler(0, Random.Range(0.0f, 360.0f), 0));
+        newestIsland = Instantiate(newIsland, transform.position + GenerateVector(),
+            Quaternion.Euler(0, Random.Range(0.0f, 360.0f), 0));
     }
+
     private Vector3 GenerateVector()
     {
         switch (Random.Range(0, 4))
@@ -81,12 +81,12 @@ public class IslandBehav : MonoBehaviour
                 placementVec.x = Random.Range(-20, 20);
                 placementVec.z = 20f;
                 break;
-            
+
             case 3:
                 placementVec.x = Random.Range(-20, 20);
                 placementVec.z = -20f;
                 break;
-            
+
             default:
                 print("Island Generation Error");
                 break;
