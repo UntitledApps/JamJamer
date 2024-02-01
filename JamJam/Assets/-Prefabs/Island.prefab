@@ -9900,7 +9900,6 @@ MonoBehaviour:
   startingIslandCount: 5
   newIsland: {fileID: 7151499277139243693}
   playerPos: {fileID: 0}
-  isNewestIsland: 1
 --- !u!114 &8221911506062716181
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9956,7 +9955,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1000000, y: 20.018768, z: 1000000}
+  m_Size: {x: 1e+10, y: 20.018768, z: 1e+10}
   m_Center: {x: 0, y: 6.2338085, z: 0}
 --- !u!1 &7167354439079541607
 GameObject:
