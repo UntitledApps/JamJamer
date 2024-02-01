@@ -10,14 +10,14 @@ using Random = UnityEngine.Random;
 
 public class IslandBehav : MonoBehaviour
 {
-    [SerializeField] private float distanceTillDestroy, startingIslandCount;
-    private static int IslandsPresent;
+    [SerializeField] private float distanceTillDestroy, distanceTillTrigger, startingIslandCount;
+    private static int IslandsPresent = 0;
     public GameObject newIsland;
     private static GameObject newestIsland;
     public Transform playerPos;
-    public bool isNewestIsland;
+    [NonSerialized] public bool isNewestIsland;
     private bool exitDidntHappened = true;
-    private bool playerLeft;
+    private bool playerEntered;
     private Vector3 placementVec;
 
     private void Awake()
@@ -39,17 +39,15 @@ public class IslandBehav : MonoBehaviour
             clone();
         }
 
-        if ((playerPos.transform.position.y - transform.position.y) > distanceTillDestroy && playerLeft)
+        if ((transform.position.y - playerPos.transform.position.y) <= distanceTillTrigger)
         {
-            Destroy(this.gameObject);
+            print("island triggered " + (this.gameObject.transform.position.y));
+            newestIsland.GetComponent<IslandBehav>().isNewestIsland = true;
         }
 
-        if ((playerPos.transform.position.y - transform.position.y) > distanceTillDestroy && playerLeft)
+        if ((playerPos.transform.position.y - transform.position.y) >= distanceTillDestroy)
         {
-            exitDidntHappened = false;
-
-            newestIsland.GetComponent<IslandBehav>().isNewestIsland = true;
-            playerLeft = true;
+            Destroy(this.gameObject);   
         }
     }
 
@@ -57,8 +55,7 @@ public class IslandBehav : MonoBehaviour
     {
         isNewestIsland = false;
 
-        newestIsland = Instantiate(newIsland, transform.position + GenerateVector(),
-            Quaternion.Euler(0, Random.Range(0.0f, 360.0f), 0));
+        newestIsland = Instantiate(newIsland, transform.position + GenerateVector(), Quaternion.Euler(0, Random.Range(0.0f, 360.0f), 0));
     }
 
     private Vector3 GenerateVector()
