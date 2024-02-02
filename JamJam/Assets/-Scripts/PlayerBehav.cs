@@ -9,7 +9,7 @@ public class PlayerBehav : MonoBehaviour
 {
     [SerializeField] private float mouseSens, moveSpeed, groundedSpeed, JumpPower, hookPower, hookVertPush;
     [SerializeField] private Transform Cam, Stone, StoneHolder, GrassHolder, CricketPullPos;
-    [SerializeField] private GameObject StoneDisplay;
+    [SerializeField] private GameObject StoneDisplay, DeathScreen;
     [SerializeField] private HookHitSpacBehav HookHitSpaceBehav;
     [SerializeField] private PickupHitSpaceBehav PickupHitSpaceBehav;
     private Vector3 moveVec, hookVec, origVelo, pushToCricketPullPos;
@@ -18,6 +18,7 @@ public class PlayerBehav : MonoBehaviour
     private bool grounded, hasStone;
     [NonSerialized] public bool isHittingStone = false;
     private Rigidbody rb;
+    public GameManager _gameManager;
 
     // sasd
     private void Awake()
@@ -27,6 +28,7 @@ public class PlayerBehav : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
 
         StoneDisplay.SetActive(false);
+        DeathScreen.SetActive(false);
     }
 
     private void OnMove(InputValue value)
@@ -78,7 +80,7 @@ public class PlayerBehav : MonoBehaviour
 
     private void OnHook()
     {
-        if (HookHitSpaceBehav.hookedEnemy != null)
+        if (HookHitSpaceBehav.hookedEnemy != null && HookHitSpaceBehav.hookedEnemy.CompareTag("HitableCricket"))
         {
             HookHitSpaceBehav.hookedEnemy.tag = "Cricket";
             HookHitSpaceBehav.hookedEnemy.GetComponent<BoxCollider>().enabled = !HookHitSpaceBehav.hookedEnemy.GetComponent<BoxCollider>().enabled;
@@ -119,9 +121,19 @@ public class PlayerBehav : MonoBehaviour
     {
         if (other.gameObject.CompareTag("DeathPlane"))
         {
-            print("sdf");
-            
-            UnityEngine.SceneManagement.SceneManager.LoadScene("Play");
+            DeathScreen.SetActive(true);
+            Invoke(nameof(DeactivateDeathScreen), 2);
+            _gameManager.RestartDelay();
+        }       
+        
+        if (other.gameObject.CompareTag("Cricket"))
+        {
+            //rb.AddForce(other.transform.position - transform.position * 1000);
         }
+    }
+
+    private void DeactivateDeathScreen()
+    {
+        DeathScreen.SetActive(false);
     }
 }

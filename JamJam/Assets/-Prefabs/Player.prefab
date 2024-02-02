@@ -278,7 +278,7 @@ Transform:
   m_GameObject: {fileID: 3768015339616346503}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.313, y: -0.242, z: 0.176}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -769,8 +769,10 @@ MonoBehaviour:
   GrassHolder: {fileID: 3140218059085419056}
   CricketPullPos: {fileID: 2130789409856885489}
   StoneDisplay: {fileID: 7602390819761070620}
+  DeathScreen: {fileID: 0}
   HookHitSpaceBehav: {fileID: 4303130186445077534}
   PickupHitSpaceBehav: {fileID: 6920647011922256600}
+  _gameManager: {fileID: 0}
 --- !u!54 &8368013067452509137
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1188,7 +1190,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.3352014, y: 1.3352014, z: 1.3352014}
+  m_LocalScale: {x: 0.23237562, y: 0.23237562, z: 0.23237562}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1579361178401169293}

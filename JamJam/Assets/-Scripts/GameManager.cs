@@ -23,4 +23,15 @@ public class GameManager : MonoBehaviour
     {
         UnityEngine.SceneManagement.SceneManager.LoadScene(sceneName);
     }
+
+    public void RestartDelay()
+    {
+        Invoke(nameof(Restart), 2);
+    }
+    
+    public void Restart()
+    {
+        print("asdfasd");
+        UnityEngine.SceneManagement.SceneManager.LoadScene("Play");
+    }
 }
